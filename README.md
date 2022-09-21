@@ -2,7 +2,7 @@
 
 My solution of [nandgame.com](https://nandgame.com/).
 
-## Table of contents:
+## Table of contents
 
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
 
