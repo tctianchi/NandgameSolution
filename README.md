@@ -1,6 +1,10 @@
 # Nandgame Solution
 
-My solution of nandgame.com
+My solution of [nandgame.com](https://nandgame.com/).
+
+## Table of contents:
+
+* [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
 
 ## H.4.4 Condition (50 nands)
 
