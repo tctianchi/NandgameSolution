@@ -28,7 +28,7 @@ LUT (Lookup Table) is a commenly used trick in FPGAs.
 
 ![H.4.1 LogicUnit](img/H.4.1-LogicUnit.png)
 
-## [H.4.2 Arithmetic Unit (232 nands)
+## H.4.2 Arithmetic Unit (232 nands)
 
 Implement add and sub in a single block. Select carry/borrow according to the add/sub bit.
 
