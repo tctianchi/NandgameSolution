@@ -43,6 +43,9 @@ Splitting into data[15] and data[14:0] simplifies the logic.
 
 ## O.3.1 Max (106 nands)
 
-Let high.lte and high.gte denote that a <= b and a >= b in the higher bits. Select a if gte && !lte; select b if !gte && lte; compare a and b if lte && gte.
+Let high.lte and high.gte denote that a <= b and a >= b in the higher bits.
+* Select a if gte && !lte;
+* Select b if !gte && lte;
+* Compare a and b if lte && gte.
 
 ![O.3.1 Max](img/O.3.1-Max.png)
