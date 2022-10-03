@@ -59,7 +59,7 @@ We do not need a "sub16" because:
 
 Similar to my "O.3.1 Max", I build a "unsignedGte16" to detect if a >= b.
 
-The selectors are also optimised in "o56AddSignedTruthTable", in which "s" means the final sign; "a/!a" means invert a if this bit = 0; "ab/!ab" means invert a+b if this bit = 1.
+The selectors are also optimised in "o56AddSignedTruthTable", in which "s" means the final sign; "a/!a" means invert a if this bit = 0; "!ab/ab" means invert a+b if this bit = 1.
 
 Conclusion: 343 nands
 * add: 139 nands
