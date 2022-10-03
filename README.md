@@ -69,7 +69,4 @@ Conclusion: 434 nands
 * selectors: 10 nands
 * unsignedGte16: 91 nands
 
-![image](https://user-images.githubusercontent.com/7827456/193588197-a4e664c3-de13-4423-97bd-6d9b0605b271.png)
-
-
 ![O.5.6-AddSignedMagnitude](img/O.5.6-AddSignedMagnitude.png)
