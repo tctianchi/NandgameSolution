@@ -61,12 +61,13 @@ Similar to my "O.3.1 Max", I build a "unsignedGte16" to detect if a >= b.
 
 The selectors are also optimised in "o56AddSignedTruthTable", in which "s" means the final sign; "a/!a" means invert a if this bit = 0; "!ab/ab" means invert a+b if this bit = 1.
 
-Conclusion: 343 nands
+Conclusion: 434 nands
 * add: 139 nands
 * select A or ~A: 4 * 16 + 1 = 65 nands
 * select B or ~B: 4 * 16 + 1 = 65 nands
 * final invert: 4 * 16 = 64 nands
 * selectors: 10 nands
+* unsignedGte16: 91 nands
 
 ![image](https://user-images.githubusercontent.com/7827456/193588197-a4e664c3-de13-4423-97bd-6d9b0605b271.png)
 
