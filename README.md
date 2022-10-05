@@ -8,7 +8,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.4.2 Arithmetic Unit (232 nands)](#h42-arithmetic-unit-232-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
-* [O.3.2 Multiplication (8x8bit) (670 nands)](#o32-multiplication-8x8bit-670nands)
+* [O.3.2 Multiplication (8x8bit) (670 nands)](#o32-multiplication-8x8bit-670-nands)
 * [O.4.1 Unary ALU (68 nands)](#o41-unary-alu-68-nands)
 * [O.5.6 Add signed magnitude (433 nands)](#o56-add-signed-magnitude-433-nands)
 
