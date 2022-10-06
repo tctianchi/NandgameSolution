@@ -66,6 +66,8 @@ This work mainly improves 2-bits multiplication to 13 nands. The other parts are
 
 ![O.3.2 Multiplication](img/O.3.2-Multiplication.png)
 
+> Reference:
+> 
 > Bathija, Rajesh et al. “Low Power High Speed 16x16 bit Multiplier using Vedic Mathematics.” International Journal of Computer Applications 59 (2012): 41-44.
 
 ## O.4.1 Unary ALU (68 nands)
