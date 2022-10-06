@@ -57,7 +57,7 @@ Let high.lte and high.gte denote that a <= b and a >= b in the higher bits.
 
 This work implements a 16bits x 16bits = 16bits Vedic Multiplier. (I think someone else's answers were 8bits x 8bits = 16bits.)
 
-Since the overflow bit should be discarded according to the question, two types of components are designed. "mul4*4=4" omits the 4 overflow bits (and you may find this type of components are quite easy to understand). "mul4*4=8" keeps the 4 carry bits.
+Since the overflow bit should be discarded according to the question, two types of components are designed. "mul4\*4=4" omits the 4 overflow bits (and you may find this type of components are quite easy to understand). "mul4\*4=8" keeps the 4 carry bits.
 
 * mul2\*2=2: 8 nands
 * mul2\*2=4: 13 nands
