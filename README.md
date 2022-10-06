@@ -8,7 +8,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.4.2 Arithmetic Unit (232 nands)](#h42-arithmetic-unit-232-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
-* [O.3.2 Multiplication (8x8bit) (670 nands)](#o32-multiplication-8x8bit-670-nands)
+* [O.3.2 Multiplication (1404 nands)](#o32-multiplication-1404-nands)
 * [O.4.1 Unary ALU (68 nands)](#o41-unary-alu-68-nands)
 * [O.5.6 Add signed magnitude (433 nands)](#o56-add-signed-magnitude-433-nands)
 
@@ -53,16 +53,19 @@ Let high.lte and high.gte denote that a <= b and a >= b in the higher bits.
 
 ![O.3.1 Max](img/O.3.1-Max.png)
 
-## O.3.2 Multiplication (8x8bit) (670 nands)
+## O.3.2 Multiplication (1404 nands)
 
-Since [previous works in reddit](https://www.reddit.com/comments/qn2hne) are actually 8-bits x 8-bits = 16-bits (instead of 16-bits x 16-bits = 16-bits), I also provide optimizations with the same specifications.
+This work implements a 16bits x 16bits = 16bits Vedic Multiplier. (I think someone else's answers were 8bits x 8bits = 16bits.)
 
-This work mainly improves 2-bits multiplication to 13 nands. The other parts are still Vedic algorithm.
+Since the overflow bit should be discarded according to the question, two types of components are designed. "mul4*4=4" omits the 4 overflow bits (and you may find this type of components are quite easy to understand). "mul4*4=8" keeps the 4 carry bits.
 
-* add4: fullAdd * 4 = 36 nands
-* mul2: 13 nands
-* mul4: mul2 * 4 + fullAdd * 6 + halfAdd * 3 + 7 = 128 nands
-* mul8: mul4 * 4 + add4 * 2 + fullAdd * 6 + halfAdd * 5 + 9 = 670 nands
+* mul2*2=2: 8 nands
+* mul2*2=4: 13 nands
+* mul4*4=4: "mul2*2=4" * 1 + "mul2*2=2" * 2 + fullAddWithoutCarry * 2 + halfAdd * 2 = 55 nands
+* mul4*4=8: "mul2*2=4" * 4 + fullAdd * 6 + halfAdd * 3 + 7 = 128 nands
+* mul8*8=8: "mul4*4=8" * 1 + "mul4*4=4" * 2 + fullAddWithoutCarry * 2 + fullAdd * 4 + halfAdd * 2 = 300 nands
+* mul8*8=16: "mul4*4=8" * 4 + add4 * 2 + fullAdd * 6 + halfAdd * 5 + 7 = 670 nands
+* mul16*16=16: "mul8*8=16" * 1 + "mul8*8=8" * 2 + fullAddWithoutCarry * 2 + add4 * 2 + fullAdd * 4 + halfAdd * 2 = 1404 nands
 
 ![O.3.2 Multiplication](img/O.3.2-Multiplication.png)
 
