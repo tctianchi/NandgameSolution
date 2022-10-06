@@ -59,6 +59,11 @@ Since [previous works in reddit](https://www.reddit.com/comments/qn2hne) are act
 
 This work mainly improves 2-bits multiplication to 13 nands. The other parts are still Vedic algorithm.
 
+* add4: fullAdd * 4 = 36 nands
+* mul2: 13 nands
+* mul4: mul2 * 4 + fullAdd * 6 + halfAdd * 3 + 7 = 128 nands
+* mul8: mul4 * 4 + add4 * 2 + fullAdd * 6 + halfAdd * 5 + 9 = 670 nands
+
 ![O.3.2 Multiplication](img/O.3.2-Multiplication.png)
 
 ## O.4.1 Unary ALU (68 nands)
