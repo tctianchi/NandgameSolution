@@ -59,13 +59,13 @@ This work implements a 16bits x 16bits = 16bits Vedic Multiplier. (I think someo
 
 Since the overflow bit should be discarded according to the question, two types of components are designed. "mul4*4=4" omits the 4 overflow bits (and you may find this type of components are quite easy to understand). "mul4*4=8" keeps the 4 carry bits.
 
-* mul2*2=2: 8 nands
-* mul2*2=4: 13 nands
-* mul4*4=4: "mul2*2=4" * 1 + "mul2*2=2" * 2 + fullAddWithoutCarry * 2 + halfAdd * 2 = 55 nands
-* mul4*4=8: "mul2*2=4" * 4 + fullAdd * 6 + halfAdd * 3 + 7 = 128 nands
-* mul8*8=8: "mul4*4=8" * 1 + "mul4*4=4" * 2 + fullAddWithoutCarry * 2 + fullAdd * 4 + halfAdd * 2 = 300 nands
-* mul8*8=16: "mul4*4=8" * 4 + add4 * 2 + fullAdd * 6 + halfAdd * 5 + 7 = 670 nands
-* mul16*16=16: "mul8*8=16" * 1 + "mul8*8=8" * 2 + fullAddWithoutCarry * 2 + add4 * 2 + fullAdd * 4 + halfAdd * 2 = 1404 nands
+* mul2\*2=2: 8 nands
+* mul2\*2=4: 13 nands
+* mul4\*4=4: "mul2\*2=4" * 1 + "mul2\*2=2" * 2 + fullAddWithoutCarry * 2 + halfAdd * 2 = 55 nands
+* mul4\*4=8: "mul2\*2=4" * 4 + fullAdd * 6 + halfAdd * 3 + 7 = 128 nands
+* mul8\*8=8: "mul4\*4=8" * 1 + "mul4\*4=4" * 2 + fullAddWithoutCarry * 2 + fullAdd * 4 + halfAdd * 2 = 300 nands
+* mul8\*8=16: "mul4\*4=8" * 4 + add4 * 2 + fullAdd * 6 + halfAdd * 5 + 7 = 670 nands
+* mul16\*16=16: "mul8\*8=16" * 1 + "mul8\*8=8" * 2 + fullAddWithoutCarry * 2 + add4 * 2 + fullAdd * 4 + halfAdd * 2 = 1404 nands
 
 ![O.3.2 Multiplication](img/O.3.2-Multiplication.png)
 
