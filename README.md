@@ -82,6 +82,10 @@ Pre-calculate the common parts.
 
 ## O.5.2 Floating-point multiplication (205 nands)
 
+The exponents only have 5 bits, so (X + Y) only requires 5 adders. (X + Y - 15) = (X + Y + 0b10001), so the 2nd layer requires even less adders.
+
+The final nands showed by the game make no sense because the 11 x 11 = 22bits multiplcation is complicated. Anyway...
+
 ![O.5.2 Floating-point multiplication](img/O.5.2-FloatingPointMultiplication.png)
 
 ## O.5.6 Add signed magnitude (433 nands)
