@@ -10,6 +10,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
 * [O.3.2 Multiplication (1404 nands)](#o32-multiplication-1404-nands)
 * [O.4.1 Unary ALU (68 nands)](#o41-unary-alu-68-nands)
+* [O.5.2 Floating-point multiplication (205 nands)](#o52-floating-point-multiplication-205-nands)
 * [O.5.6 Add signed magnitude (433 nands)](#o56-add-signed-magnitude-433-nands)
 
 ```
@@ -78,6 +79,10 @@ Since the overflow bit should be discarded according to the question, two types 
 Pre-calculate the common parts.
 
 ![O.4.1 UnaryALU](img/O.4.1-UnaryALU.png)
+
+## O.5.2 Floating-point multiplication (205 nands)
+
+![O.5.2 Floating-point multiplication](img/O.5.2-FloatingPointMultiplication.png)
 
 ## O.5.6 Add signed magnitude (433 nands)
 
