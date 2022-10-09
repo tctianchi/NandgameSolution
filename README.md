@@ -11,6 +11,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.3.2 Multiplication (1404 nands)](#o32-multiplication-1404-nands)
 * [O.4.1 Unary ALU (68 nands)](#o41-unary-alu-68-nands)
 * [O.5.2 Floating-point multiplication (205 nands)](#o52-floating-point-multiplication-205-nands)
+* [O.5.3 Normalize overflow (118 nands)](#o53-normalize-overflow-118-nands)
 * [O.5.6 Add signed magnitude (433 nands)](#o56-add-signed-magnitude-433-nands)
 
 ```
@@ -87,6 +88,12 @@ The exponents only have 5 bits, so (X + Y) only requires 5 adders. (X + Y - 15) 
 The final nands showed by the game make no sense because the 11 x 11 = 22bits multiplcation is complicated. Anyway...
 
 ![O.5.2 Floating-point multiplication](img/O.5.2-FloatingPointMultiplication.png)
+
+## O.5.3 Normalize overflow (118 nands)
+
+The exponents only have 5 bits.
+
+![O.5.3 Normalize overflow](img/O.5.3-NormalizeOverflow.png)
 
 ## O.5.6 Add signed magnitude (433 nands)
 
