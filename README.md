@@ -25,6 +25,42 @@ My solution of [nandgame.com](https://nandgame.com/).
 *                                                    *
 *                                                    *
 *                                                    *
+*                                                    *
+*                                                    *
+*                                                    *
+*                     Spoiler                        *
+*                                                    *
+*                     Warning                        *
+*                                                    *
+*                                                    *
+*                                                    *
+*                                                    *
+*                                                    *
+*                                                    *
+*                     Spoiler                        *
+*                                                    *
+*                     Warning                        *
+*                                                    *
+*                                                    *
+*                                                    *
+*                                                    *
+*                                                    *
+*                                                    *
+*                     Spoiler                        *
+*                                                    *
+*                     Warning                        *
+*                                                    *
+*                                                    *
+*                                                    *
+*                                                    *
+*                                                    *
+*                                                    *
+*                     Spoiler                        *
+*                                                    *
+*                     Warning                        *
+*                                                    *
+*                                                    *
+*                                                    *
 ****************************************************** 
 ```
 
