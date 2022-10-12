@@ -138,9 +138,18 @@ The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, so shift-right 
 
 In order to handle 0x1 - 0x1e = -0x1d, we need a 6-bits subtraction and 6-bits negative.
 
-
-
-
+* barrel5.shr11: 2 * 11 + 1 + 128 = 151. The game author gives us a 128-bits b.shr. I think it is immposible.
+* sub1Half: 4
+* sub1: 9
+* sub4: 36
+* sub6: 8 + 36 + 1 + 4 = 49
+* neg1Half: 0
+* neg1: 6
+* neg4: 24
+* neg6: 4 + 24 + 0 = 28
+* select5: 3 * 5 = 15
+* select11: 3 * 11 = 33
+* final: 15 + 33 * 2 + 1 + 151 * 2 + 28 + 49 = 461
 
 ![O.5.5 Align significands](img/O.5.5-AlignSignificands.png)
 
