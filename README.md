@@ -134,6 +134,14 @@ The exponents only have 5 bits.
 
 ## O.5.5 Align significands (461 nands)
 
+The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, so shift-right should work with 5 bits. The game author gives us a 4 bits version, we can build a 5-bit version on top of it.
+
+In order to handle 0x1 - 0x1e = -0x1d, we need a 6-bits subtraction and 6-bits negative.
+
+
+
+
+
 ![O.5.5 Align significands](img/O.5.5-AlignSignificands.png)
 
 ## O.5.6 Add signed magnitude (433 nands)
