@@ -145,12 +145,12 @@ The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, so we need a 5-
 
 In order to handle 0x1 - 0x1e = -0x1d, we need a 6-bits subtraction. When then subtraction result is negative, I use a special 5-bits shift-right that accept negated value.
 
-* barrel.shr11.bit0: 1 + 2 * 1 + 3 * 11 = 36
+* barrel.shr11.bit0: 1 + 2 * 1 + 3 * 10 = 33
 * barrel.shr11.bit1: 1 + 2 * 2 + 3 * 9 = 32
 * barrel.shr11.bit2: 1 + 2 * 4 + 3 * 7 = 30
 * barrel.shr11.bit3: 1 + 2 * 8 + 3 * 3 = 26
 * barrel.shr11.bit4: 1 + 2 * 11 = 23
-* barrel5.shr11: 36 + 32 + 30 + 26 + 23 = 147
+* barrel5.shr11: 33 + 32 + 30 + 26 + 23 = 144
 * barrel.shr11.bit0.neg: 1 + 2 * 1 + 3 * 9 = 30
 * barrel.shr11.bit1.neg: 1 + 2 * 2 + 3 * 9 = 32
 * barrel.shr11.bit2.neg: 1 + 2 * 4 + 3 * 7 = 30
@@ -166,7 +166,7 @@ In order to handle 0x1 - 0x1e = -0x1d, we need a 6-bits subtraction. When then s
 * select4: 3 * 4 = 12
 * select5: 3 * 5 = 15
 * select11: 3 * 11 = 33
-* final: 15 + 33 * 2 + 1 + 140 + 147 + 49 = 418
+* final: 15 + 33 * 2 + 1 + 140 + 144 + 49 = 415
 
 ![O.5.5 Align significands](img/O.5.5-AlignSignificands.png)
 
