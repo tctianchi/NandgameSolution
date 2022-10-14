@@ -143,7 +143,7 @@ The exponents only have 5 bits.
 
 The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, so we need a 5-bits shift-right. (The game author gives us a 4 bits version, we can build a 5-bit version on top of it. In this answer I build a better one.)
 
-In order to handle 0x1 - 0x1e = -0x1d, we need a 6-bits subtraction. When then subtraction result is negative, I use a special 5-bits shift-right that accept negated value.
+In order to handle 0x1 - 0x1e = -0x1d, we need a 6-bits subtraction. When the subtraction result is negative, I use a special 5-bits shift-right that accept negated value.
 
 * barrel.shr11.bit0: 1 + 2 * 1 + 3 * 10 = 33
 * barrel.shr11.bit1: 1 + 2 * 2 + 3 * 9 = 32
