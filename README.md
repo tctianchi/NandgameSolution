@@ -8,6 +8,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.4.2 Arithmetic Unit (232 nands)](#h42-arithmetic-unit-232-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
+* [O.2.5 Barrel Shift Left (95 nands)](#o25-barrel-shift-left-95-nands)
 * [O.3.2 Multiplication (1404 nands)](#o32-multiplication-1404-nands)
 * [O.4.1 Unary ALU (68 nands)](#o41-unary-alu-68-nands)
 * [O.5.2 Floating-point multiplication (205 nands)](#o52-floating-point-multiplication-205-nands)
@@ -82,6 +83,12 @@ Implement add and sub in a single block. Select carry/borrow according to the ad
 Splitting into data[15] and data[14:0] simplifies the logic.
 
 ![H.4.4 Condition](img/H.4.4-Condition.png)
+
+## O.2.5 Barrel Shift Left (95 nands)
+
+We exactly know which bits will become 0 and we can use "and" instead of "select".
+
+![O.2.5 Barrel Shift Left](img/O.2.5-BarrelShiftLeft.png)
 
 ## O.3.1 Max (106 nands)
 
