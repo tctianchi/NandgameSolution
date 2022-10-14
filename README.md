@@ -13,7 +13,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.4.1 Unary ALU (68 nands)](#o41-unary-alu-68-nands)
 * [O.5.2 Floating-point multiplication (205 nands)](#o52-floating-point-multiplication-205-nands)
 * [O.5.3 Normalize overflow (118 nands)](#o53-normalize-overflow-118-nands)
-* [O.5.5 Align significands (461 nands)](#o55-align-significands-461-nands)
+* [O.5.5 Align significands (415 nands)](#o55-align-significands-415-nands)
 * [O.5.6 Add signed magnitude (433 nands)](#o56-add-signed-magnitude-433-nands)
 
 ```
@@ -139,24 +139,34 @@ The exponents only have 5 bits.
 
 ![O.5.3 Normalize overflow](img/O.5.3-NormalizeOverflow.png)
 
-## O.5.5 Align significands (461 nands)
+## O.5.5 Align significands (415 nands)
 
-The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, so shift-right should work with 5 bits. The game author gives us a 4 bits version, we can build a 5-bit version on top of it.
+The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, so we need a 5-bits shift-right. (The game author gives us a 4 bits version, we can build a 5-bit version on top of it. In this answer I build a better one.)
 
-In order to handle 0x1 - 0x1e = -0x1d, we need a 6-bits subtraction and 6-bits negative.
+In order to handle 0x1 - 0x1e = -0x1d, we need a 6-bits subtraction. When then subtraction result is negative, I use a special 5-bits shift-right that accept negated value.
 
-* barrel5.shr11: 2 * 11 + 1 + 128 = 151. The game author gives us a 128-bits b.shr. I think it is immposible.
+* barrel.shr11.bit0: 1 + 2 * 1 + 3 * 11 = 36
+* barrel.shr11.bit1: 1 + 2 * 2 + 3 * 9 = 32
+* barrel.shr11.bit2: 1 + 2 * 4 + 3 * 7 = 30
+* barrel.shr11.bit3: 1 + 2 * 8 + 3 * 3 = 26
+* barrel.shr11.bit4: 1 + 2 * 11 = 23
+* barrel5.shr11: 36 + 32 + 30 + 26 + 23 = 147
+* barrel.shr11.bit0.neg: 1 + 2 * 1 + 3 * 9 = 30
+* barrel.shr11.bit1.neg: 1 + 2 * 2 + 3 * 9 = 32
+* barrel.shr11.bit2.neg: 1 + 2 * 4 + 3 * 7 = 30
+* barrel.shr11.bit3.neg: 1 + 2 * 8 + 3 * 3 = 26
+* barrel.shr11.bit4.neg: 2 * 11 = 22
+* barrel5.shr11.neg: 30 + 32 + 30 + 26 + 22 = 140
 * sub1Half: 4
 * sub1: 9
+* sub1WithoutCarry: 8
 * sub4: 36
 * sub6: 8 + 36 + 1 + 4 = 49
-* neg1Half: 0
-* neg1: 6
-* neg4: 24
-* neg6: 4 + 24 + 0 = 28
+* select1: 3
+* select4: 3 * 4 = 12
 * select5: 3 * 5 = 15
 * select11: 3 * 11 = 33
-* final: 15 + 33 * 2 + 1 + 151 * 2 + 28 + 49 = 461
+* final: 15 + 33 * 2 + 1 + 140 + 147 + 49 = 418
 
 ![O.5.5 Align significands](img/O.5.5-AlignSignificands.png)
 
