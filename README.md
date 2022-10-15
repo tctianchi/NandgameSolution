@@ -96,6 +96,17 @@ Implement add and sub in a single block. Select carry/borrow according to the ad
 
 ![H.4.2 ArithmeticUnit](img/H.4.2-AddSub.png)
 
+## H.4.3 ALU (594 nands)
+
+* select16: 3 * 16 = 48
+* and16: 2 * 16 = 32
+* swap XY: select16 * 2 + 1 = 97
+* zero: and16 + 1 = 33
+* arithmetic or logic: select16 + 1 = 49
+* arithmetic: 232
+* logic: 183
+* final: 97 + 33 + 49 + 232 + 183 = 594
+
 ## H.4.4 Condition (50 nands)
 
 Splitting into data[15] and data[14:0] simplifies the logic.
