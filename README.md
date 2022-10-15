@@ -7,6 +7,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.1~3 Too Easy](#h13-too-easy)
 * [H.4.1 Logic Unit (183 nands)](#h41-logic-unit-183-nands)
 * [H.4.2 Arithmetic Unit (232 nands)](#h42-arithmetic-unit-232-nands)
+* [H.4.3 ALU (594 nands)](#h43-alu-594-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
 * [O.1~2 Too Easy](#o12-too-easy)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
