@@ -10,6 +10,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.4.3 ALU (594 nands)](#h43-alu-594-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
 * [H.6.2 Instruction (693 nands)](#h62-instruction-693-nands)
+* [H.6.3 Control Unit (780 nands)](#h63-control-unit-780-nands)
 * [O.1~2 Too Easy](#o12-too-easy)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
 * [O.2.5 Barrel Shift Left (95 nands)](#o25-barrel-shift-left-95-nands)
@@ -119,12 +120,22 @@ Splitting into data[15] and data[14:0] simplifies the logic.
 
 ## H.6.2 Instruction (693 nands)
 
-* select16: 3 * 16 + 1 = 49 nands
+* select16: 3 * 16 = 48 nands
 * alu: 594 nands
 * condition: 50 nands
-* final: 49 + 594 + 50 = 693 nands
+* final: 1 + 48 + 594 + 50 = 693 nands
 
 ![H.6.2 Instruction](img/H.6.2-Instruction.png)
+
+## H.6.3 Control Unit (780 nands)
+
+* select16: 3 * 16 = 48 nands
+* x/1: 2 * 15 + 2 = 32 nands
+* alu instruction: 693 nands
+* other selectors: 1 + 48 + 2 * 3 = 55 nands
+* final: 55 + 32 + 693 = 780 nands
+
+![H.6.3 Control Unit](img/H.6.3-ControlUnit.png)
 
 ## O.1~2 Too Easy
 
