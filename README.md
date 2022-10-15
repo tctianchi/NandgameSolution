@@ -100,8 +100,6 @@ Implement add and sub in a single block. Select carry/borrow according to the ad
 
 ## H.4.3 ALU (594 nands)
 
-Just mix it up.
-
 * select16: 3 * 16 = 48 nands
 * and16: 2 * 16 = 32 nands
 * swap XY: select16 * 2 + 1 = 97 nands
@@ -125,6 +123,8 @@ Splitting into data[15] and data[14:0] simplifies the logic.
 * alu: 594 nands
 * condition: 50 nands
 * final: 49 + 594 + 50 = 693 nands
+
+![H.6.2 Instruction](img/H.6.2-Instruction.png)
 
 ## O.1~2 Too Easy
 
