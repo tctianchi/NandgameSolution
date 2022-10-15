@@ -9,6 +9,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.4.2 Arithmetic Unit (232 nands)](#h42-arithmetic-unit-232-nands)
 * [H.4.3 ALU (594 nands)](#h43-alu-594-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
+* [H.6.2 Instruction (693 nands)](#h62-instruction-693-nands)
 * [O.1~2 Too Easy](#o12-too-easy)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
 * [O.2.5 Barrel Shift Left (95 nands)](#o25-barrel-shift-left-95-nands)
@@ -99,20 +100,27 @@ Implement add and sub in a single block. Select carry/borrow according to the ad
 
 ## H.4.3 ALU (594 nands)
 
-* select16: 3 * 16 = 48
-* and16: 2 * 16 = 32
-* swap XY: select16 * 2 + 1 = 97
-* zero: and16 + 1 = 33
-* arithmetic or logic: select16 + 1 = 49
-* arithmetic: 232
-* logic: 183
-* final: 97 + 33 + 49 + 232 + 183 = 594
+* select16: 3 * 16 = 48 nands
+* and16: 2 * 16 = 32 nands
+* swap XY: select16 * 2 + 1 = 97 nands
+* zero: and16 + 1 = 33 nands
+* arithmetic or logic: select16 + 1 = 49 nands
+* arithmetic: 232 nands
+* logic: 183 nands
+* final: 97 + 33 + 49 + 232 + 183 = 594 nands
 
 ## H.4.4 Condition (50 nands)
 
 Splitting into data[15] and data[14:0] simplifies the logic.
 
 ![H.4.4 Condition](img/H.4.4-Condition.png)
+
+## H.6.2 Instruction (693 nands)
+
+* select16: 3 * 16 + 1 = 49 nands
+* alu: 594 nands
+* condition: 50 nands
+* final: 49 + 594 + 50 = 693 nands
 
 ## O.1~2 Too Easy
 
