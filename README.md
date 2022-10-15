@@ -4,6 +4,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 
 ## Table of contents
 
+* [H.1~3 Too Easy](#h13-too-easy)
 * [H.4.1 Logic Unit (183 nands)](#h41-logic-unit-183-nands)
 * [H.4.2 Arithmetic Unit (232 nands)](#h42-arithmetic-unit-232-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
@@ -65,6 +66,22 @@ My solution of [nandgame.com](https://nandgame.com/).
 *                                                    *
 ****************************************************** 
 ```
+## H.1~3 Too Easy
+
+* H.1.1 Nand (2 components)
+* H.1.2 Invert (1 nand)
+* H.1.3 And (2 nands)
+* H.1.4 Or (3 nands)
+* H.1.5 Xor (4 nands)
+* H.2.1 Half Adder (5 nands)
+* H.2.2 Full Adder (9 nands)
+* H.2.3 Multi-bit Adder (18 nands)
+* H.2.4 Increment (75 nands)
+* H.2.5 Subtraction (139 nands)
+* H.2.6 Equal to Zero (10 nands)
+* H.2.7 Less than Zero (0 nands)
+* H.3.1 Selector (4 nands)
+* H.3.2 Switch (4 nands)
 
 ## H.4.1 Logic Unit (183 nands)
 
