@@ -8,6 +8,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.4.1 Logic Unit (183 nands)](#h41-logic-unit-183-nands)
 * [H.4.2 Arithmetic Unit (232 nands)](#h42-arithmetic-unit-232-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
+* [O.1~2 Too Easy](#o12-too-easy)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
 * [O.2.5 Barrel Shift Left (95 nands)](#o25-barrel-shift-left-95-nands)
 * [O.3.2 Multiplication (1404 nands)](#o32-multiplication-1404-nands)
@@ -100,6 +101,16 @@ Implement add and sub in a single block. Select carry/borrow according to the ad
 Splitting into data[15] and data[14:0] simplifies the logic.
 
 ![H.4.4 Condition](img/H.4.4-Condition.png)
+
+## O.1~2 Too Easy
+
+* Nand (CMOS) (3 components)
+* Invert (CMOS) (2 components)
+* Nor (CMOS) (4 components)
+* Xnor (5 nands)
+* Left Shift (0 nands)
+* Logical Right Shift (0 nands)
+* Artithmetic Right Shift (0 nands)
 
 ## O.2.5 Barrel Shift Left (95 nands)
 
