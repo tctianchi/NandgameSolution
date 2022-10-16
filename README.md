@@ -5,6 +5,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 ## Table of contents
 
 * [H.2.4 Increment (75 nands)](#h24-increment-75-nands)
+* [H.2.5 Subtraction (139 nands)](#h25-subtraction-139-nands)
 * [H.4.1 Logic Unit (183 nands)](#h41-logic-unit-183-nands)
 * [H.4.2 Arithmetic Unit (232 nands)](#h42-arithmetic-unit-232-nands)
 * [H.4.3 ALU (594 nands)](#h43-alu-594-nands)
@@ -75,6 +76,12 @@ My solution of [nandgame.com](https://nandgame.com/).
 Half-add is enough.
 
 ![H.2.4 Increment](img/H.2.4-Increment.png)
+
+## H.2.5 Subtraction (139 nands)
+
+We will re-use this in Optional Levels later.
+
+![H.2.5 Subtraction](img/H.2.5-Subtraction.png)
 
 ## H.4.1 Logic Unit (183 nands)
 
