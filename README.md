@@ -10,6 +10,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.4.2 Arithmetic Unit (232 nands)](#h42-arithmetic-unit-232-nands)
 * [H.4.3 ALU (594 nands)](#h43-alu-594-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
+* [H.5.1 Latch (4 nands)](#h51-latch-4-nands)
 * [H.6.2 Instruction (693 nands)](#h62-instruction-693-nands)
 * [H.6.3 Control Unit (780 nands)](#h63-control-unit-780-nands)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
