@@ -4,14 +4,12 @@ My solution of [nandgame.com](https://nandgame.com/).
 
 ## Table of contents
 
-* [H.1~3](#h13)
 * [H.4.1 Logic Unit (183 nands)](#h41-logic-unit-183-nands)
 * [H.4.2 Arithmetic Unit (232 nands)](#h42-arithmetic-unit-232-nands)
 * [H.4.3 ALU (594 nands)](#h43-alu-594-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
 * [H.6.2 Instruction (693 nands)](#h62-instruction-693-nands)
 * [H.6.3 Control Unit (780 nands)](#h63-control-unit-780-nands)
-* [O.1~2](#o12)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
 * [O.2.5 Barrel Shift Left (95 nands)](#o25-barrel-shift-left-95-nands)
 * [O.3.2 Multiplication (1404 nands)](#o32-multiplication-1404-nands)
@@ -70,22 +68,6 @@ My solution of [nandgame.com](https://nandgame.com/).
 *                                                    *
 ****************************************************** 
 ```
-## H.1~3
-
-* H.1.1 Nand (2 components)
-* H.1.2 Invert (1 nand)
-* H.1.3 And (2 nands)
-* H.1.4 Or (3 nands)
-* H.1.5 Xor (4 nands)
-* H.2.1 Half Adder (5 nands)
-* H.2.2 Full Adder (9 nands)
-* H.2.3 Multi-bit Adder (18 nands)
-* H.2.4 Increment (75 nands)
-* H.2.5 Subtraction (139 nands)
-* H.2.6 Equal to Zero (10 nands)
-* H.2.7 Less than Zero (0 nands)
-* H.3.1 Selector (4 nands)
-* H.3.2 Switch (4 nands)
 
 ## H.4.1 Logic Unit (183 nands)
 
@@ -136,16 +118,6 @@ Splitting into data[15] and data[14:0] simplifies the logic.
 * final: 55 + 32 + 693 = 780 nands
 
 ![H.6.3 Control Unit](img/H.6.3-ControlUnit.png)
-
-## O.1~2
-
-* Nand (CMOS) (3 components)
-* Invert (CMOS) (2 components)
-* Nor (CMOS) (4 components)
-* Xnor (5 nands)
-* Left Shift (0 nands)
-* Logical Right Shift (0 nands)
-* Artithmetic Right Shift (0 nands)
 
 ## O.2.5 Barrel Shift Left (95 nands)
 
