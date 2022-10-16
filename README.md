@@ -115,7 +115,7 @@ Splitting into data[15] and data[14:0] simplifies the logic.
 
 ![H.4.4 Condition](img/H.4.4-Condition.png)
 
-## H.5.1 Latch (4 nands) With "select1" Bug
+## H.5.1 Latch (4 nands) Without "select1" Bug
 
 A traditional [D latch](https://en.wikipedia.org/wiki/Flip-flop_(electronics)#Gated_D_latch).
 
