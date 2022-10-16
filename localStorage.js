@@ -1,8 +1,12 @@
 // backup
-let all = {}
+let keys = []
 for (let i = 0; i < localStorage.length; i++) {
   const k = localStorage.key(i)
-  const v = localStorage.getItem(k)
-  all[k] = v
+  keys.push(k)
+}
+keys.sort()
+let all = {}
+for (let k of keys) {
+  all[k] = localStorage.getItem(k)
 }
 console.log(JSON.stringify(all, null, 2))
