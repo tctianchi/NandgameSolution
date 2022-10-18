@@ -17,7 +17,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.2.5 Barrel Shift Left (95 nands)](#o25-barrel-shift-left-95-nands)
 * [O.3.2 Multiplication (1404 nands)](#o32-multiplication-1404-nands)
 * [O.4.1 Unary ALU (68 nands)](#o41-unary-alu-68-nands)
-* [O.5.2 Floating-point multiplication (178 nands)](#o52-floating-point-multiplication-178-nands)
+* [O.5.2 Floating-point multiplication (157 nands)](#o52-floating-point-multiplication-157-nands)
 * [O.5.3 Normalize overflow (58 nands)](#o53-normalize-overflow-58-nands)
 * [O.5.5 Align significands (415 nands)](#o55-align-significands-415-nands)
 * [O.5.6 Add signed magnitude (433 nands)](#o56-add-signed-magnitude-433-nands)
@@ -183,9 +183,9 @@ Pre-calculate the common parts.
 
 ![O.4.1 UnaryALU](img/O.4.1-UnaryALU.png)
 
-## O.5.2 Floating-point multiplication (178 nands)
+## O.5.2 Floating-point multiplication (157 nands)
 
-The max possible exp is 0x1e + 0x1e - 15 = 45. So the output is 6-bits. (X + Y - 15) = (X + Y + 0b110001), so the 2nd layer requires even less adders.
+The max possible exp is 0x1e + 0x1e - 15 = 45. So the output is 6-bits. (X + Y - 15) = (X + Y + 0b110001).
 
 The final nands showed by the game make no sense because the 11 x 11 = 22bits multiplcation is complicated. Anyway...
 
