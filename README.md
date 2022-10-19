@@ -19,6 +19,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.4.1 Unary ALU (68 nands)](#o41-unary-alu-68-nands)
 * [O.5.2 Floating-point multiplication (157 nands)](#o52-floating-point-multiplication-157-nands)
 * [O.5.3 Normalize overflow (58 nands)](#o53-normalize-overflow-58-nands)
+* [O.5.4 Verify exponent (41 nands)](#o54-verify-exponent-41-nands)
 * [O.5.5 Align significands (415 nands)](#o55-align-significands-415-nands)
 * [O.5.6 Add signed magnitude (433 nands)](#o56-add-signed-magnitude-433-nands)
 
@@ -231,6 +232,10 @@ In order to handle 0x1 - 0x1e = -0x1d, we need a 6-bits subtraction. When the su
 * final: 15 + 33 * 2 + 1 + 140 + 144 + 49 = 415
 
 ![O.5.5 Align significands](img/O.5.5-AlignSignificands.png)
+
+## O.5.4 Verify exponent (41 nands)
+
+![O.5.4 Verify exponent](img/O.5.4-VerifyExponent.png)
 
 ## O.5.6 Add signed magnitude (433 nands)
 
