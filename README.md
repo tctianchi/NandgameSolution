@@ -18,7 +18,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.3.2 Multiplication (1404 nands)](#o32-multiplication-1404-nands)
 * [O.4.1 Unary ALU (68 nands)](#o41-unary-alu-68-nands)
 * [O.5.2 Floating-point multiplication (157 nands)](#o52-floating-point-multiplication-157-nands)
-* [O.5.3 Normalize overflow (58 nands)](#o53-normalize-overflow-58-nands)
+* [O.5.3 Normalize overflow (57 nands)](#o53-normalize-overflow-57-nands)
 * [O.5.4 Verify exponent (41 nands)](#o54-verify-exponent-41-nands)
 * [O.5.5 Align significands (415 nands)](#o55-align-significands-415-nands)
 * [O.5.6 Add signed magnitude (433 nands)](#o56-add-signed-magnitude-433-nands)
@@ -192,13 +192,11 @@ The final nands showed by the game make no sense because the 11 x 11 = 22bits mu
 
 ![O.5.2 Floating-point multiplication](img/O.5.2-FloatingPointMultiplication.png)
 
-## O.5.3 Normalize overflow (58 nands)
+## O.5.3 Normalize overflow (57 nands)
 
-The exponents only have 5 bits.
-
-* select1 * 11: 33 nands
+* select1 * 10: 30 nands
 * halfAdd1 * 4: 20 nands
-* final: 33 + 20 + 4 + 1 = 58 nands
+* final: 20 + 4 + 1 + 30 + 2 = 57 nands
 
 ![O.5.3 Normalize overflow](img/O.5.3-NormalizeOverflow.png)
 
