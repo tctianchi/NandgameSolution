@@ -20,7 +20,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.5.2 Floating-point multiplication (157 nands)](#o52-floating-point-multiplication-157-nands)
 * [O.5.3 Normalize overflow (57 nands)](#o53-normalize-overflow-57-nands)
 * [O.5.4 Verify exponent (41 nands)](#o54-verify-exponent-41-nands)
-* [O.5.5 Align significands (415 nands)](#o55-align-significands-415-nands)
+* [O.5.5 Align significands (327 nands)](#o55-align-significands-327-nands)
 * [O.5.6 Add signed magnitude (433 nands)](#o56-add-signed-magnitude-433-nands)
 
 ```
@@ -200,34 +200,20 @@ The final nands showed by the game make no sense because the 11 x 11 = 22bits mu
 
 ![O.5.3 Normalize overflow](img/O.5.3-NormalizeOverflow.png)
 
-## O.5.5 Align significands (415 nands)
+## O.5.5 Align significands (327 nands)
 
-The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, so we need a 5-bits shift-right. (The game author gives us a 4 bits version, we can build a 5-bit version on top of it. In this answer I build a better one.)
+The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, which needs a 5-bits shift-right. Translate the result of sub5 into the 5-bits shift-right.
 
-In order to handle 0x1 - 0x1e = -0x1d, we need a 6-bits subtraction. When the subtraction result is negative, I use a special 5-bits shift-right that accept negated value.
-
-* barrel.shr11.bit0: 1 + 2 * 1 + 3 * 10 = 33
-* barrel.shr11.bit1: 1 + 2 * 2 + 3 * 9 = 32
-* barrel.shr11.bit2: 1 + 2 * 4 + 3 * 7 = 30
-* barrel.shr11.bit3: 1 + 2 * 8 + 3 * 3 = 26
-* barrel.shr11.bit4: 1 + 2 * 11 = 23
-* barrel5.shr11: 33 + 32 + 30 + 26 + 23 = 144
-* barrel.shr11.bit0.neg: 1 + 2 * 1 + 3 * 9 = 30
-* barrel.shr11.bit1.neg: 1 + 2 * 2 + 3 * 9 = 32
-* barrel.shr11.bit2.neg: 1 + 2 * 4 + 3 * 7 = 30
-* barrel.shr11.bit3.neg: 1 + 2 * 8 + 3 * 3 = 26
-* barrel.shr11.bit4.neg: 2 * 11 = 22
-* barrel5.shr11.neg: 30 + 32 + 30 + 26 + 22 = 140
-* sub1Half: 4
-* sub1: 9
-* sub1WithoutCarry: 8
-* sub4: 36
-* sub6: 8 + 36 + 1 + 4 = 49
-* select1: 3
-* select4: 3 * 4 = 12
+* sub5: 36 + 5 = 41
 * select5: 3 * 5 = 15
-* select11: 3 * 11 = 33
-* final: 15 + 33 * 2 + 1 + 140 + 144 + 49 = 415
+* translate(+): 11
+* translate(-): 25
+* barrel.shr11.bit0: 2 * 1 + 3 * 10 = 32
+* barrel.shr11.bit1: 2 * 2 + 3 * 9 = 31
+* barrel.shr11.bit2: 2 * 4 + 3 * 7 = 29
+* barrel.shr11.bit3: 2 * 8 + 3 * 3 = 25
+* barrel4.shr11: 32 + 31 + 29 + 25 = 117
+* final: 41 + 15 + 1 + 11 + 25 + 117 * 2 = 327
 
 ![O.5.5 Align significands](img/O.5.5-AlignSignificands.png)
 
