@@ -21,7 +21,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.5.3 Normalize overflow (57 nands)](#o53-normalize-overflow-57-nands)
 * [O.5.4 Verify exponent (41 nands)](#o54-verify-exponent-41-nands)
 * [O.5.5 Align significands (327 nands)](#o55-align-significands-327-nands)
-* [O.5.6 Add signed magnitude (433 nands)](#o56-add-signed-magnitude-433-nands)
+* [O.5.6 Add signed magnitude (228 nands)](#o56-add-signed-magnitude-228-nands)
 
 ```
 ******************************************************
@@ -221,22 +221,15 @@ The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, which needs a 5
 
 ![O.5.4 Verify exponent](img/O.5.4-VerifyExponent.png)
 
-## O.5.6 Add signed magnitude (433 nands)
+## O.5.6 Add signed magnitude (228 nands)
 
-We do not need a "sub16" because:
-* a - b = ~(~a + b)
-* -a + b = ~(a + ~b)
-
-Similar to my "O.3.1 Max", I build a "unsignedGte16" to detect if a >= b.
-
-The selectors are also optimised in "o56AddSignedTruthTable", in which "s" means the final sign; "a/!a" means invert a if this bit = 0; "!ab/ab" means invert a+b if this bit = 1.
-
-Conclusion: 433 nands
-* add: 139 nands
-* select A or ~A: 4 * 16 + 1 = 65 nands
-* select B or ~B: 4 * 16 + 1 = 65 nands
-* final invert: 4 * 16 = 64 nands
-* selectors: 9 nands
-* unsignedGte16: 91 nands
+* truth: 12
+* abs1: 8
+* abs1WithoutBorrow: 6
+* abs11: 6 + 8 * 9 + 0 = 78
+* addSub1: 13
+* addSub1Last: 8
+* addSub11: 13 * 10 + 8 = 138
+* final: 12 + 78 + 138 = 228
 
 ![O.5.6-AddSignedMagnitude](img/O.5.6-AddSignedMagnitude.png)
