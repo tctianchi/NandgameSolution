@@ -243,8 +243,13 @@ I don't actually know what to do if the exponent is less than 1 after a left shi
 * clz8: clz4 * 2 + 10 = 30
 * clz3: 6
 * clz11: clz8 + clz3 + 14 = 50
-* barrel4.shl: 121
+* barrel.shl11.bit0: 3 * 10 + 2 * 1 = 32
+* barrel.shl11.bit1: 3 * 9 + 2 * 2 = 31
+* barrel.shl11.bit2: 3 * 7 + 2 * 4 = 29
+* barrel.shl11.bit3: 3 * 3 + 2 * 8 = 25
+* barrel4.shl: 117
+* inv4: 4
 * sub4: 8 + 9 * 2 + 5 = 31
-* final: 50 + 121 + 31 = 202
+* final: 50 + 117 + 4 + 31 = 202
 
 ![O.5.7-NormalizeUnderflow](img/O.5.7-NormalizeUnderflow.png)
