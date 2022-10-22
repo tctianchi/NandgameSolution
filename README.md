@@ -22,6 +22,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.5.4 Verify exponent (41 nands)](#o54-verify-exponent-41-nands)
 * [O.5.5 Align significands (327 nands)](#o55-align-significands-327-nands)
 * [O.5.6 Add signed magnitude (228 nands)](#o56-add-signed-magnitude-228-nands)
+* [O.5.7 Normalize underflow (202 nands)](#o57-normalizeunderflow-202-nands)
 
 ```
 ******************************************************
@@ -233,3 +234,7 @@ The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, which needs a 5
 * final: 12 + 78 + 138 = 228
 
 ![O.5.6-AddSignedMagnitude](img/O.5.6-AddSignedMagnitude.png)
+
+## O.5.7 Normalize underflow (202 nands)
+
+![O.5.7-NormalizeUnderflow](img/O.5.7-NormalizeUnderflow.png)
