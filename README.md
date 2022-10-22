@@ -252,4 +252,10 @@ I don't actually know what to do if the exponent is less than 1 after a left shi
 * sub4: 8 + 9 * 2 + 5 = 31
 * final: 50 + 117 + 4 + 31 = 202
 
+More explain about clz11:
+* clz4 returns   z' = 0,          y1' = 0, y0' = 0 if all inputs are 0.
+* clz8 returns   z' = 0, y2' = 1, y1' = 0, y0' = 0 if all inputs are 0.
+* clz3 returns   z' = 0,          y1' = 0, y0' = 1 if all inputs are 0.
+* clz11 returns y3' = 1, y2' = 1, y1' = 0, y0' = 0 if all inputs are 0.
+
 ![O.5.7-NormalizeUnderflow](img/O.5.7-NormalizeUnderflow.png)
