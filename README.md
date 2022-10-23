@@ -8,7 +8,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.2.5 Subtraction (139 nands)](#h25-subtraction-139-nands)
 * [H.4.1 Logic Unit (183 nands)](#h41-logic-unit-183-nands)
 * [H.4.2 Arithmetic Unit (232 nands)](#h42-arithmetic-unit-232-nands)
-* [H.4.3 ALU (594 nands)](#h43-alu-594-nands)
+* [H.4.3 ALU (566 nands)](#h43-alu-566-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
 * [H.5.1 Latch (4 nands) Without "select1" Bug](#h51-latch-4-nands-without-select1-bug)
 * [H.6.2 Instruction (693 nands)](#h62-instruction-693-nands)
@@ -98,16 +98,13 @@ Implement add and sub in a single block. Select carry/borrow according to the ad
 
 ![H.4.2 ArithmeticUnit](img/H.4.2-AddSub.png)
 
-## H.4.3 ALU (594 nands)
+## H.4.3 ALU (566 nands)
 
 * select16: 3 * 16 = 48 nands
-* and16: 2 * 16 = 32 nands
-* swap XY: select16 * 2 + 1 = 97 nands
-* zero: and16 + 1 = 33 nands
-* arithmetic or logic: select16 + 1 = 49 nands
+* zero: 6 nands
 * arithmetic: 232 nands
 * logic: 183 nands
-* final: 97 + 33 + 49 + 232 + 183 = 594 nands
+* final: 48 * 3 + 1 + 232 + 183 + 6 = 566 nands
 
 ![H.4.3 ALU](img/H.4.3-ALU.png)
 
