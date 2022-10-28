@@ -7,7 +7,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.2.4 Increment (75 nands)](#h24-increment-75-nands)
 * [H.2.5 Subtraction (139 nands)](#h25-subtraction-139-nands)
 * [H.4.1 Logic Unit (183 nands)](#h41-logic-unit-183-nands)
-* [H.4.2 Arithmetic Unit (232 nands)](#h42-arithmetic-unit-232-nands)
+* [H.4.2 Arithmetic Unit (211 nands)](#h42-arithmetic-unit-211-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
 * [H.5.1 Latch (4 nands) Without "select1" Bug](#h51-latch-4-nands-without-select1-bug)
 * [H.6.2 Instruction (693 nands)](#h62-instruction-693-nands)
@@ -91,9 +91,9 @@ LUT (Lookup Table) is a commenly used trick in FPGAs.
 
 ![H.4.1 LogicUnit](img/H.4.1-LogicUnit.png)
 
-## H.4.2 Arithmetic Unit (232 nands)
+## H.4.2 Arithmetic Unit (211 nands)
 
-Implement add and sub in a single block. Select carry/borrow according to the add/sub bit.
+A very special component to select between (y, 0, 1, y').
 
 ![H.4.2 ArithmeticUnit](img/H.4.2-AddSub.png)
 
