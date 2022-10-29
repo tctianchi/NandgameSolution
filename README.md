@@ -208,7 +208,7 @@ The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, which needs a 5
 
 ![O.5.4 Verify exponent](img/O.5.4-VerifyExponent.png)
 
-## O.5.6 Add signed magnitude (228 nands)
+## O.5.6 Add signed magnitude (222 nands)
 
 I first calculate gte (a >= b) and then one of (a + b), (a - b) and (b - a) in the same block. gte and addSubSwap has some common parts.
 
