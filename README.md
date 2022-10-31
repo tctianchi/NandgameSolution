@@ -20,7 +20,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.5.3 Normalize overflow (57 nands)](#o53-normalize-overflow-57-nands)
 * [O.5.4 Verify exponent (41 nands)](#o54-verify-exponent-41-nands)
 * [O.5.5 Align significands (327 nands)](#o55-align-significands-327-nands)
-* [O.5.6 Add signed magnitude (222 nands)](#o56-add-signed-magnitude-222-nands)
+* [O.5.6 Add signed magnitude (222 nands)](#o56-add-signed-magnitude-213-nands)
 * [O.5.7 Normalize underflow (207 nands)](#o57-normalize-underflow-207-nands)
 
 ```
