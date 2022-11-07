@@ -8,7 +8,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.2.5 Subtraction (139 nands)](#h25-subtraction-139-nands)
 * [H.4.1 Logic Unit (183 nands)](#h41-logic-unit-183-nands)
 * [H.4.2 Arithmetic Unit (211 nands)](#h42-arithmetic-unit-211-nands)
-* [H.4.3 ALU (409 nands)](#h43-alu-409-nands)
+* [H.4.3 ALU (407 nands)](#h43-alu-407-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
 * [H.5.1 Latch (4 nands) Without "select1" Bug](#h51-latch-4-nands-without-select1-bug)
 * [H.6.2 Instruction (693 nands)](#h62-instruction-693-nands)
@@ -98,12 +98,12 @@ A very special component to select between (y, 0, 1, y').
 
 ![H.4.2 ArithmeticUnit](img/H.4.2-AddSub.png)
 
-## H.4.3 ALU (409 nands)
+## H.4.3 ALU (407 nands)
 
 * add16+c: 9 * 15 + 8 = 143
 * decoder part1: 11
-* decoder part2: 16
-* decoder part3: 15
+* decoder part2: 15
+* decoder part3: 14
 * select16: 48
 * lut2x16: 9 * 16 = 144
 * inv16x2: 32
