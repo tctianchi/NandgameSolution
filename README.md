@@ -11,8 +11,8 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.4.3 ALU (407 nands)](#h43-alu-407-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
 * [H.5.1 Latch (4 nands) Without "select1" Bug](#h51-latch-4-nands-without-select1-bug)
-* [H.6.2 Instruction (693 nands)](#h62-instruction-693-nands)
-* [H.6.3 Control Unit (780 nands)](#h63-control-unit-780-nands)
+* [H.6.2 Instruction (506 nands)](#h62-instruction-506-nands)
+* [H.6.3 Control Unit (563 nands)](#h63-control-unit-563-nands)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
 * [O.2.5 Barrel Shift Left (95 nands)](#o25-barrel-shift-left-95-nands)
 * [O.3.2 Multiplication (1404 nands)](#o32-multiplication-1404-nands)
@@ -124,22 +124,21 @@ Note: If you use "select1" in this level, unfortunately this is not correct in r
 
 ![H.5.1 Latch](img/H.5.1-Latch.png)
 
-## H.6.2 Instruction (693 nands)
+## H.6.2 Instruction (506 nands)
 
 * select16: 3 * 16 = 48 nands
-* alu: 594 nands
+* alu: 407 nands
 * condition: 50 nands
-* final: 1 + 48 + 594 + 50 = 693 nands
+* final: 1 + 48 + 407 + 50 = 506 nands
 
 ![H.6.2 Instruction](img/H.6.2-Instruction.png)
 
-## H.6.3 Control Unit (780 nands)
+## H.6.3 Control Unit (563 nands)
 
-* select16: 3 * 16 = 48 nands
-* x/1: 2 * 15 + 2 = 32 nands
-* alu instruction: 693 nands
-* other selectors: 1 + 48 + 2 * 3 = 55 nands
-* final: 55 + 32 + 693 = 780 nands
+* a or 1: 2 nands
+* alu instruction: 506 nands
+* other selectors: 1 + 3 * 16 + 2 * 3 = 55 nands
+* final: 55 + 2 + 506 = 563 nands
 
 ![H.6.3 Control Unit](img/H.6.3-ControlUnit.png)
 
