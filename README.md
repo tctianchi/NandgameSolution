@@ -16,13 +16,12 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.2.5 Barrel Shift Left 4bits (181 nands)](#o25-barrel-shift-left-4bits-181-nands)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
 * [O.3.2 Multiplication (1404 nands)](#o32-multiplication-1404-nands)
-* [O.4.1 Unary ALU (68 nands)](#o41-unary-alu-68-nands)
-* [O.5.2 Floating-point multiplication (157 nands)](#o52-floating-point-multiplication-157-nands)
-* [O.5.3 Normalize overflow (57 nands)](#o53-normalize-overflow-57-nands)
-* [O.5.4 Verify exponent (41 nands)](#o54-verify-exponent-41-nands)
-* [O.5.5 Align significands (327 nands)](#o55-align-significands-327-nands)
-* [O.5.6 Add signed magnitude (198 nands)](#o56-add-signed-magnitude-198-nands)
-* [O.5.7 Normalize underflow (207 nands)](#o57-normalize-underflow-207-nands)
+* [O.4.2 Floating-point multiplication (157 nands)](#o52-floating-point-multiplication-157-nands)
+* [O.4.3 Normalize overflow (57 nands)](#o53-normalize-overflow-57-nands)
+* [O.4.4 Verify exponent (41 nands)](#o54-verify-exponent-41-nands)
+* [O.4.5 Align significands (327 nands)](#o55-align-significands-327-nands)
+* [O.4.6 Add signed magnitude (198 nands)](#o56-add-signed-magnitude-198-nands)
+* [O.4.7 Normalize underflow (207 nands)](#o57-normalize-underflow-207-nands)
 
 ```
 ******************************************************
@@ -182,13 +181,7 @@ Since the overflow bit should be discarded according to the question, two types 
 > 
 > Bathija, Rajesh et al. “Low Power High Speed 16x16 bit Multiplier using Vedic Mathematics.” International Journal of Computer Applications 59 (2012): 41-44.
 
-## O.4.1 Unary ALU (68 nands)
-
-Pre-calculate the common parts.
-
-![O.4.1 UnaryALU](img/O.4.1-UnaryALU.png)
-
-## O.5.2 Floating-point multiplication (157 nands)
+## O.4.2 Floating-point multiplication (157 nands)
 
 The max possible exp is 0x1e + 0x1e - 15 = 45. So the output is 6-bits. (X + Y - 15) = (X + Y + 0b110001).
 
@@ -196,7 +189,7 @@ The final nands showed by the game make no sense because the 11 x 11 = 22bits mu
 
 ![O.5.2 Floating-point multiplication](img/O.5.2-FloatingPointMultiplication.png)
 
-## O.5.3 Normalize overflow (57 nands)
+## O.4.3 Normalize overflow (57 nands)
 
 * select1 * 10: 30 nands
 * halfAdd1 * 4: 20 nands
@@ -204,7 +197,7 @@ The final nands showed by the game make no sense because the 11 x 11 = 22bits mu
 
 ![O.5.3 Normalize overflow](img/O.5.3-NormalizeOverflow.png)
 
-## O.5.5 Align significands (327 nands)
+## O.4.5 Align significands (327 nands)
 
 The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, which needs a 5-bits shift-right. Translate the result of sub5 into the 5-bits shift-right.
 
@@ -221,11 +214,11 @@ The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, which needs a 5
 
 ![O.5.5 Align significands](img/O.5.5-AlignSignificands.png)
 
-## O.5.4 Verify exponent (41 nands)
+## O.4.4 Verify exponent (41 nands)
 
 ![O.5.4 Verify exponent](img/O.5.4-VerifyExponent.png)
 
-## O.5.6 Add signed magnitude (198 nands)
+## O.4.6 Add signed magnitude (198 nands)
 
 * if higher bit is gte, calculate a - b - c
 * if higher bit is lte, calculate b - a - c
@@ -235,7 +228,7 @@ The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, which needs a 5
 
 ![O.5.6-AddSignedMagnitude](img/O.5.6-AddSignedMagnitude.png)
 
-## O.5.7 Normalize underflow (207 nands)
+## O.4.7 Normalize underflow (207 nands)
 
 I don't actually know what to do if the exponent is less than 1 after a left shift on a too small input number. This answer will return an underflow exponent in this case. (ex: exp = 1 and sf = 0x1ff.)
 
