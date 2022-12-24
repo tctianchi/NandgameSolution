@@ -14,7 +14,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.6.2 Instruction (506 nands)](#h62-instruction-506-nands)
 * [H.6.3 Control Unit (563 nands)](#h63-control-unit-563-nands)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
-* [O.2.5 Barrel Shift Left (95 nands)](#o25-barrel-shift-left-95-nands)
+* [O.2.5 Barrel Shift Left 4bits (181 nands)](#o25-barrel-shift-left-4bits-181-nands)
 * [O.3.2 Multiplication (1404 nands)](#o32-multiplication-1404-nands)
 * [O.4.1 Unary ALU (68 nands)](#o41-unary-alu-68-nands)
 * [O.5.2 Floating-point multiplication (157 nands)](#o52-floating-point-multiplication-157-nands)
@@ -142,9 +142,14 @@ Note: If you use "select1" in this level, unfortunately this is not correct in r
 
 ![H.6.3 Control Unit](img/H.6.3-ControlUnit.png)
 
-## O.2.5 Barrel Shift Left (95 nands)
+## O.2.5 Barrel Shift Left 4bits (181 nands)
 
 We exactly know which bits will become 0 and we can use "and" instead of "select".
+
+* bit0: 1 + 3 * 15 + 2 * 1 = 48
+* bit1: 1 + 3 * 14 + 2 * 2 = 47
+* bit2: 1 + 3 * 12 + 2 * 4 = 45
+* bit3: 1 + 3 * 8 + 2 * 8 = 41
 
 ![O.2.5 Barrel Shift Left](img/O.2.5-BarrelShiftLeft.png)
 
