@@ -21,7 +21,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.5.3 Normalize overflow (57 nands)](#o53-normalize-overflow-57-nands)
 * [O.5.4 Verify exponent (41 nands)](#o54-verify-exponent-41-nands)
 * [O.5.5 Align significands (327 nands)](#o55-align-significands-327-nands)
-* [O.5.6 Add signed magnitude (213 nands)](#o56-add-signed-magnitude-213-nands)
+* [O.5.6 Add signed magnitude (198 nands)](#o56-add-signed-magnitude-198-nands)
 * [O.5.7 Normalize underflow (207 nands)](#o57-normalize-underflow-207-nands)
 
 ```
@@ -225,13 +225,13 @@ The largest difference in the exponent bit is 0x1e - 0x1 = 0x1d, which needs a 5
 
 ![O.5.4 Verify exponent](img/O.5.4-VerifyExponent.png)
 
-## O.5.6 Add signed magnitude (213 nands)
+## O.5.6 Add signed magnitude (198 nands)
 
-I first calculate gte (a >= b) and then one of (a + b), (a - b) and (b - a) in the same block. gte and addSubSwap has some common parts.
-
-* selectors: 4 + 2 + 3 = 9
-* addSubSwap: 8 + 13 * 9 + 8 = 133
-* gte: 3 + 7 * 9 + 5 = 71
+* if higher bit is gte, calculate a - b - c
+* if higher bit is lte, calculate b - a - c
+* if higher bit is eq and current bit is gte, calculate a - b - c
+* if higher bit is eq and current bit is lte, calculate b - a - c
+* if both eq, a - b - c and b - a - c will be the same thing
 
 ![O.5.6-AddSignedMagnitude](img/O.5.6-AddSignedMagnitude.png)
 
