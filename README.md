@@ -16,12 +16,12 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.2.5 Barrel Shift Left 4bits (181 nands)](#o25-barrel-shift-left-4bits-181-nands)
 * [O.3.1 Max (106 nands)](#o31-max-106-nands)
 * [O.3.2 Multiplication (1404 nands)](#o32-multiplication-1404-nands)
-* [O.4.2 Floating-point multiplication (157 nands)](#o52-floating-point-multiplication-157-nands)
-* [O.4.3 Normalize overflow (57 nands)](#o53-normalize-overflow-57-nands)
-* [O.4.4 Verify exponent (41 nands)](#o54-verify-exponent-41-nands)
-* [O.4.5 Align significands (327 nands)](#o55-align-significands-327-nands)
-* [O.4.6 Add signed magnitude (198 nands)](#o56-add-signed-magnitude-198-nands)
-* [O.4.7 Normalize underflow (207 nands)](#o57-normalize-underflow-207-nands)
+* [O.4.2 Floating-point multiplication (157 nands)](#o42-floating-point-multiplication-157-nands)
+* [O.4.3 Normalize overflow (57 nands)](#o43-normalize-overflow-57-nands)
+* [O.4.4 Verify exponent (41 nands)](#o44-verify-exponent-41-nands)
+* [O.4.5 Align significands (327 nands)](#o45-align-significands-327-nands)
+* [O.4.6 Add signed magnitude (198 nands)](#o46-add-signed-magnitude-198-nands)
+* [O.4.7 Normalize underflow (207 nands)](#o47-normalize-underflow-207-nands)
 
 ```
 ******************************************************
