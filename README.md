@@ -256,6 +256,6 @@ More explain about clz11:
 
 ## O.5.1 Timer trigger (75 nands)
 
-Frequency division (level-trigger version) + level to pulse.
+Frequency-division + level-to-pulse.
 
 ![O.6.1-TimerTrigger](img/O.6.1-TimerTrigger.png)
