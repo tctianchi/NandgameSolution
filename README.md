@@ -119,7 +119,7 @@ Splitting into data[15] and data[14:0] simplifies the logic.
 
 A traditional [D latch](https://en.wikipedia.org/wiki/Flip-flop_(electronics)#Gated_D_latch).
 
-Note: If you use "select1" in this level, unfortunately this is not correct in reality and can only exist in the game. If we expand the "select1" in this solution, we will find that the output is connected to an [SR nand latch](https://en.wikipedia.org/wiki/Flip-flop_(electronics)#SR_NAND_latch), in which it is illegal when S' = 0, R' = 0 at the same time.
+Note: If you use "select1" in this level, unfortunately this is not correct in reality and can only exist in the game. If we expand the "select1" in this solution, we will find that the output is connected to an [SR nand latch](https://en.wikipedia.org/wiki/Flip-flop_(electronics)#SR_NAND_latch), in which it is illegal when S' = 0, R' = 0 (when st = 1 and d = 1) at the same time.
 
 ![H.5.1 Latch](img/H.5.1-Latch.png)
 
