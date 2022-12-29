@@ -6,7 +6,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 
 * [H.2.4 Increment (75 nands)](#h24-increment-75-nands)
 * [H.2.5 Subtraction (139 nands)](#h25-subtraction-139-nands)
-* [H.4.1 Logic Unit (183 nands)](#h41-logic-unit-183-nands)
+* [H.4.1 Logic Unit (149 nands)](#h41-logic-unit-149-nands)
 * [H.4.2 Arithmetic Unit (211 nands)](#h42-arithmetic-unit-211-nands)
 * [H.4.3 ALU (407 nands)](#h43-alu-407-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
@@ -86,9 +86,7 @@ We will re-use this in Optional Levels later.
 
 ![H.2.5 Subtraction](img/H.2.5-Subtraction.png)
 
-## H.4.1 Logic Unit (183 nands)
-
-LUT (Lookup Table) is a commenly used trick in FPGAs.
+## H.4.1 Logic Unit (149 nands)
 
 ![H.4.1 LogicUnit](img/H.4.1-LogicUnit.png)
 
