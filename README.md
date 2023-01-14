@@ -10,7 +10,7 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [H.4.2 Arithmetic Unit (211 nands)](#h42-arithmetic-unit-211-nands)
 * [H.4.3 ALU (407 nands)](#h43-alu-407-nands)
 * [H.4.4 Condition (50 nands)](#h44-condition-50-nands)
-* [H.5.1 Latch (4 nands) Without "select1" Bug](#h51-latch-4-nands-without-select1-bug)
+* [H.5.1 Latch (4 nands)](#h51-latch-4-nands)
 * [H.6.2 Instruction (506 nands)](#h62-instruction-506-nands)
 * [H.6.3 Control Unit (563 nands)](#h63-control-unit-563-nands)
 * [O.2.5 Barrel Shift Left 4bits (181 nands)](#o25-barrel-shift-left-4bits-181-nands)
@@ -114,7 +114,7 @@ Splitting into data[15] and data[14:0] simplifies the logic.
 
 ![H.4.4 Condition](img/H.4.4-Condition.png)
 
-## H.5.1 Latch (4 nands) Without "select1" Bug
+## H.5.1 Latch (4 nands)
 
 A traditional [D latch](https://en.wikipedia.org/wiki/Flip-flop_(electronics)#Gated_D_latch).
 
