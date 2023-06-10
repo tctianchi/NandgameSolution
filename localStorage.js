@@ -10,3 +10,9 @@ for (let k of keys) {
   all[k] = localStorage.getItem(k)
 }
 console.log(JSON.stringify(all, null, 2))
+
+// restore
+dumped = {} // paste from localStorage.json
+for (var key in dumped) {
+    localStorage[key] = dumped[key]
+}
