@@ -22,7 +22,6 @@ My solution of [nandgame.com](https://nandgame.com/).
 * [O.4.5 Align significands (327 nands)](#o45-align-significands-327-nands)
 * [O.4.6 Add signed magnitude (198 nands)](#o46-add-signed-magnitude-198-nands)
 * [O.4.7 Normalize underflow (207 nands)](#o47-normalize-underflow-207-nands)
-* [O.5.1 Timer trigger (75 nands)](#o51-timer-trigger-75-nands)
 
 ```
 ******************************************************
@@ -251,9 +250,3 @@ More explain about clz11:
 * clz11 returns y3' = 1, y2' = 1, y1' = 1, y0' = 1 if all inputs are 0.
 
 ![O.5.7-NormalizeUnderflow](img/O.5.7-NormalizeUnderflow.png)
-
-## O.5.1 Timer trigger (75 nands)
-
-Frequency-division + level-to-pulse.
-
-![O.6.1-TimerTrigger](img/O.6.1-TimerTrigger.png)
