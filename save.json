@@ -1708,12 +1708,12 @@
     ],
     "diagram": {
       "nodes": [
-        { "type": "195", "x": 177, "y": 144.60000610351562, "id": "0" },
-        { "type": "195", "x": 94, "y": 258.6000061035156, "id": "1" }
+        { "type": "195", "x": 96, "y": 129.60000610351562, "id": "0" },
+        { "type": "195", "x": 175, "y": 235.60000610351562, "id": "1" }
       ],
       "connections": [
         {
-          "source": { "nodeId": "input", "connectorId": "1" },
+          "source": { "nodeId": "input", "connectorId": "0" },
           "target": { "nodeId": "0", "connectorId": "0" }
         },
         {
@@ -1721,13 +1721,13 @@
           "target": { "nodeId": "0", "connectorId": "1" }
         },
         {
-          "source": { "nodeId": "input", "connectorId": "0" },
+          "source": { "nodeId": "input", "connectorId": "1" },
           "target": { "nodeId": "1", "connectorId": "0" }
         },
         {
           "source": { "nodeId": "input", "connectorId": "2" },
           "target": { "nodeId": "1", "connectorId": "1" },
-          "points": [{ "x": 273.9999694824219, "y": 359.7142848968506 }]
+          "points": [{ "x": 273.9999694824219, "y": 328.2857131958008 }]
         },
         {
           "source": { "nodeId": "0", "connectorId": "0" },
@@ -7900,67 +7900,85 @@
   },
   "NandGame:Levels:COUNTER": {
     "nodes": [
-      { "type": "INC16", "x": 389, "y": 353, "id": "0" },
-      { "type": "SELECT16", "x": 173, "y": 245, "id": "1" },
-      { "type": "207", "x": 293, "y": 108.22222900390625, "id": "2" },
+      { "type": "INC16", "x": 399, "y": 233, "id": "0" },
+      { "type": "207", "x": 302, "y": 108.22222900390625, "id": "1" },
       {
         "type": "INV",
-        "x": 300.5714416503906,
-        "y": 506.0000305175781,
-        "id": "3"
+        "x": 280.5714416503906,
+        "y": 367.0000305175781,
+        "id": "2"
       },
       {
         "type": "INV",
-        "x": 246.57144165039062,
-        "y": 403.0000305175781,
+        "x": 381.5714416503906,
+        "y": 364.0000305175781,
+        "id": "3"
+      },
+      {
+        "type": "56",
+        "x": 106.5714111328125,
+        "y": 231.57144165039062,
         "id": "4"
+      },
+      {
+        "type": "INV",
+        "x": 130.5714111328125,
+        "y": 370.0000305175781,
+        "id": "5"
       }
     ],
     "connections": [
       {
-        "source": { "nodeId": "2", "connectorId": "0" },
+        "source": { "nodeId": "1", "connectorId": "0" },
         "target": { "nodeId": "0", "connectorId": "0" },
-        "points": [
-          { "x": 500.9999694824219, "y": 421.1428527832031 },
-          { "x": 504.9999694824219, "y": 91.14285278320312 }
-        ]
+        "points": [{ "x": 485.9999694824219, "y": 91.14285278320312 }]
       },
       {
-        "source": { "nodeId": "input", "connectorId": "0" },
-        "target": { "nodeId": "1", "connectorId": "0" },
-        "points": [{ "x": 118.99996948242188, "y": 338.1428527832031 }]
+        "source": { "nodeId": "2", "connectorId": "0" },
+        "target": { "nodeId": "1", "connectorId": "0" }
       },
       {
-        "source": { "nodeId": "input", "connectorId": "1" },
-        "target": { "nodeId": "1", "connectorId": "1" }
-      },
-      {
-        "source": { "nodeId": "0", "connectorId": "0" },
-        "target": { "nodeId": "1", "connectorId": "2" }
+        "source": { "nodeId": "3", "connectorId": "0" },
+        "target": { "nodeId": "1", "connectorId": "1" },
+        "points": [{ "x": 345.9999694824219, "y": 320.1428527832031 }]
       },
       {
         "source": { "nodeId": "4", "connectorId": "0" },
-        "target": { "nodeId": "2", "connectorId": "0" }
-      },
-      {
-        "source": { "nodeId": "3", "connectorId": "0" },
-        "target": { "nodeId": "2", "connectorId": "1" }
-      },
-      {
-        "source": { "nodeId": "1", "connectorId": "0" },
-        "target": { "nodeId": "2", "connectorId": "2" },
-        "points": [{ "x": 358.9999694824219, "y": 201.14285278320312 }]
+        "target": { "nodeId": "1", "connectorId": "2" }
       },
       {
         "source": { "nodeId": "input", "connectorId": "2" },
-        "target": { "nodeId": "3", "connectorId": "0" }
-      },
-      {
-        "source": { "nodeId": "3", "connectorId": "0" },
-        "target": { "nodeId": "4", "connectorId": "0" }
+        "target": { "nodeId": "2", "connectorId": "0" }
       },
       {
         "source": { "nodeId": "2", "connectorId": "0" },
+        "target": { "nodeId": "3", "connectorId": "0" }
+      },
+      {
+        "source": { "nodeId": "input", "connectorId": "0" },
+        "target": { "nodeId": "4", "connectorId": "0" }
+      },
+      {
+        "source": { "nodeId": "5", "connectorId": "0" },
+        "target": { "nodeId": "4", "connectorId": "1" },
+        "points": [{ "x": 147.99996948242188, "y": 340.1428527832031 }]
+      },
+      {
+        "source": { "nodeId": "input", "connectorId": "1" },
+        "target": { "nodeId": "4", "connectorId": "2" },
+        "points": [{ "x": 221.99996948242188, "y": 352.1428527832031 }]
+      },
+      {
+        "source": { "nodeId": "0", "connectorId": "0" },
+        "target": { "nodeId": "4", "connectorId": "3" }
+      },
+      {
+        "source": { "nodeId": "input", "connectorId": "0" },
+        "target": { "nodeId": "5", "connectorId": "0" },
+        "points": [{ "x": 122.99996948242188, "y": 459.1428527832031 }]
+      },
+      {
+        "source": { "nodeId": "1", "connectorId": "0" },
         "target": { "nodeId": "output", "connectorId": "0" }
       }
     ]
@@ -19651,6 +19669,7 @@
     "PROGRAM1",
     "OPCODES2",
     "ASSEMBLER1",
+    "READ_KEYBOARD",
     "ESCAPE",
     "ASSEMBLER_DISPLAY",
     "ASSEMBLER_NETWORK_RECEIVE",
