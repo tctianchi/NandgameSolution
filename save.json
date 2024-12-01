@@ -1073,7 +1073,8 @@
         "rhs": "Number - Expression",
         "codegen": "PUSH_VALUE [Number]\n[Expression]\nSUB"
       }
-    ]
+    ],
+    "runtimeLibrary": ""
   },
   "NandGame:Levels:FLOAT_PACK": {
     "nodes": [
@@ -13000,7 +13001,7 @@
     }
   },
   "NandGame:Levels:ASSEMBLER_NETWORK_RECEIVE": {
-    "code": "DEFINE screen 0x4000\nDEFINE screenWidthWord 32\nDEFINE networkInterface 0x6001\nINIT_STACK\n\n# version 2\nDEFINE lastSync 10\nDEFINE word 11\nDEFINE currentScreen 12\nDEFINE newSync 13\nDEFINE newBit 14\nDEFINE i 15\n\n# lastSync = 0\nA = lastSync\n*A = 0\n# currentScreen = screen\nA = screen\nD = A\nA = currentScreen\n*A = D\n\nLABEL skipFrameBegin\n    # wait for \"frame begins\" (1)\n    # newBit = waitSynedBit()\n    PUSH_VALUE onNewBit1\n    GOTO waitSynedBit\n    LABEL onNewBit1\n    # if newBit != 1 then retry the whole frame\n    PUSH_STATIC newBit\n    PUSH_VALUE 1\n    EQ\n    NOT\n    IF_GOTO skipFrameBegin\n\nLABEL main\n    # word = loadWord()\n    PUSH_VALUE onNewWord1\n    GOTO loadWord\n    LABEL onNewWord1\n    # *currentScreen = word\n    A = word\n    D = *A\n    A = currentScreen\n    A = *A\n    *A = D\n    # currentScreen += screenWidthWord\n    PUSH_STATIC currentScreen\n    PUSH_VALUE screenWidthWord\n    ADD\n    POP_STATIC currentScreen\n    GOTO main\n\nLABEL loadWord\n    # word = 0\n    A = word\n    *A = 0\n    # for i in range(16)\n    # i = 0\n    A = i\n    *A = 0\n    LABEL wordLoop\n        # newBit = waitSynedBit()\n        PUSH_VALUE onNewBit2\n        GOTO waitSynedBit\n        LABEL onNewBit2\n        # word = word * 2 + newBit\n        A = word\n        D, A = *A\n        D = D + A\n        A = newBit\n        A = *A\n        D = D + A\n        A = word\n        *A = D\n        # i++\n        A = i\n        D, *A = *A + 1\n        # if i != 16 goto wordLoop\n        A = 16\n        D = D - A\n        A = wordLoop\n        D; JNE\n    # 16 bits loaded\n    # skip control bit\n    PUSH_VALUE onNewBit3\n    GOTO waitSynedBit\n    LABEL onNewBit3\nPOP_A\nJMP\n\nLABEL waitSynedBit\n    # newSync = network() & 0b10\n    A = networkInterface\n    D = *A\n    A = 0b10\n    D = D & A\n    A = newSync\n    *A = D\n    PUSH_D\n    # if oldSync == newSync then again\n    PUSH_STATIC lastSync\n    EQ\n    IF_GOTO waitSynedBit\n    # oldSync = newSync\n    A = newSync\n    D = *A\n    A = lastSync\n    *A = D\n    # newBit = network() & 0b10\n    A = networkInterface\n    D = *A\n    A = 0b1\n    D = D & A\n    A = newBit\n    *A = D\nPOP_A\nJMP\n"
+    "code": "DEFINE screen 0x4000\nDEFINE net 0x6001\nDEFINE pScreen 0\n# ++[pFrameLen] == 1: start of frame\n# ++[pFrameLen] == [2, 17]: content\n# ++[pFrameLen] == 18: control bit\n# ++[pFrameLen] == 19: next\n# note: the frame will be\n#       1, [2, 17], 18,\n#          [2, 17], 18,\n#          [2, 17], 18,\nDEFINE pFrameLen 1\nDEFINE lastSync 2\n\n# init [pScreen] = screen\nA = screen\nD = A\nA = pScreen\n*A = D\n\n# sync = 0->1 or 1->0 means new data\n# wait for sync 0->1 or 1->0\n# while ([net] & 2) == [lastInput]\n#   pass\nLABEL sync\nA = net\nD = *A\nA = 2\nD = D & A\nA = lastSync\nD = *A - D\nA = sync\nD; JEQ\n\n# now the sync bit flips\n# [lastInput] = ([net] & 2)\nA = net\nD = *A\nA = 2\nD = D & A\nA = lastSync\n*A = D\n\n# ++[pFrame]\nA = pFrameLen\n*A = *A + 1\n\n# skip the first bit\n# if [pFrame] == 1 goto sync\nA = pFrameLen\nD = *A - 1\nA = sync\nD; JEQ\n\n# if [pFrame] <= 17 goto beginFrame\nA = pFrameLen\nD = *A\nA = 17\nD = D - A\nA = content\nD; JLE\n# else\n#   [pScreen] += 512 / 16\n#   [pFrameLen] = 1\n#   goto beginFrame\nA = pScreen\nD = *A\nA = 32\nD = D + A\nA = pScreen\n*A = D\nA = pFrameLen\n*A = 1\nA = sync\nJMP\n\n# content\n# [[pScreen]] = [[pScreen]] * 2\nLABEL content\nA = pScreen\nA = *A\nA = *A\nD = A\nD = D + A\nA = pScreen\nA = *A\n*A = D\n\n# [[pScreen]] = [[pScreen]] + [net] & 1\nA = net\nD = *A\nA = 1\nD = D & A\nA = pScreen\nA = *A\n*A = D + *A\n\n# goto sync\nA = sync\nJMP\n\n"
   },
   "NandGame:CustomComponent:161": {
     "key": "161",
@@ -19689,6 +19690,7 @@
     "STACK_OR",
     "TOKENIZE_EXPRESSION",
     "GRAMMAR_EXPRESSION",
+    "CODEGEN_EXPRESSION",
     "STACK_EQ",
     "STACK_GT",
     "STACK_LT",
