@@ -1543,74 +1543,6 @@
       ]
     }
   },
-  "NandGame:CustomComponent:210": {
-    "key": "210",
-    "name": "latch(init0)",
-    "inputs": [
-      { "pins": [{ "label": "st", "width": 1 }] },
-      { "pins": [{ "label": "d", "width": 1 }] }
-    ],
-    "outputs": [
-      { "pins": [{ "label": "q", "width": 1 }] },
-      { "pins": [{ "label": "q'", "width": 1 }] }
-    ],
-    "diagram": {
-      "nodes": [
-        {
-          "type": "109",
-          "x": 118.5714111328125,
-          "y": 125.8571548461914,
-          "id": "0"
-        },
-        {
-          "type": "NAND",
-          "x": 57.5714111328125,
-          "y": 224.8571548461914,
-          "id": "1"
-        },
-        {
-          "type": "NAND",
-          "x": 152.5714111328125,
-          "y": 316.8571548461914,
-          "id": "2"
-        }
-      ],
-      "connections": [
-        {
-          "source": { "nodeId": "1", "connectorId": "0" },
-          "target": { "nodeId": "0", "connectorId": "0" }
-        },
-        {
-          "source": { "nodeId": "2", "connectorId": "0" },
-          "target": { "nodeId": "0", "connectorId": "1" }
-        },
-        {
-          "source": { "nodeId": "input", "connectorId": "0" },
-          "target": { "nodeId": "1", "connectorId": "0" }
-        },
-        {
-          "source": { "nodeId": "2", "connectorId": "0" },
-          "target": { "nodeId": "1", "connectorId": "1" }
-        },
-        {
-          "source": { "nodeId": "input", "connectorId": "0" },
-          "target": { "nodeId": "2", "connectorId": "0" }
-        },
-        {
-          "source": { "nodeId": "input", "connectorId": "1" },
-          "target": { "nodeId": "2", "connectorId": "1" }
-        },
-        {
-          "source": { "nodeId": "0", "connectorId": "1" },
-          "target": { "nodeId": "output", "connectorId": "0" }
-        },
-        {
-          "source": { "nodeId": "0", "connectorId": "0" },
-          "target": { "nodeId": "output", "connectorId": "1" }
-        }
-      ]
-    }
-  },
   "NandGame:CustomComponent:29": {
     "key": "29",
     "name": "or15",
@@ -1776,12 +1708,12 @@
     ],
     "diagram": {
       "nodes": [
-        { "type": "195", "x": 94, "y": 140.60000610351562, "id": "0" },
-        { "type": "195", "x": 178, "y": 247.60000610351562, "id": "1" }
+        { "type": "195", "x": 177, "y": 144.60000610351562, "id": "0" },
+        { "type": "195", "x": 94, "y": 258.6000061035156, "id": "1" }
       ],
       "connections": [
         {
-          "source": { "nodeId": "input", "connectorId": "0" },
+          "source": { "nodeId": "input", "connectorId": "1" },
           "target": { "nodeId": "0", "connectorId": "0" }
         },
         {
@@ -1789,13 +1721,13 @@
           "target": { "nodeId": "0", "connectorId": "1" }
         },
         {
-          "source": { "nodeId": "input", "connectorId": "1" },
+          "source": { "nodeId": "input", "connectorId": "0" },
           "target": { "nodeId": "1", "connectorId": "0" }
         },
         {
           "source": { "nodeId": "input", "connectorId": "2" },
           "target": { "nodeId": "1", "connectorId": "1" },
-          "points": [{ "x": 289, "y": 343 }]
+          "points": [{ "x": 273.9999694824219, "y": 359.7142848968506 }]
         },
         {
           "source": { "nodeId": "0", "connectorId": "0" },
@@ -2058,10 +1990,10 @@
     "diagram": {
       "nodes": [
         { "type": "BUNDLE16", "x": 176, "y": 124.22222900390625, "id": "0" },
-        { "type": "SPLIT16", "x": 454, "y": 532, "id": "1" },
-        { "type": "209", "x": 200, "y": 320.8888854980469, "id": "2" },
-        { "type": "209", "x": 379, "y": 319.8888854980469, "id": "3" },
-        { "type": "209", "x": 564, "y": 326.8888854980469, "id": "4" },
+        { "type": "SPLIT16", "x": 415, "y": 522, "id": "1" },
+        { "type": "209", "x": 166, "y": 320.8888854980469, "id": "2" },
+        { "type": "209", "x": 362, "y": 321.8888854980469, "id": "3" },
+        { "type": "209", "x": 574, "y": 323.8888854980469, "id": "4" },
         { "type": "209", "x": 748, "y": 323.8888854980469, "id": "5" },
         { "type": "BUNDLE16", "x": 547, "y": 113.22222900390625, "id": "6" }
       ],
@@ -2170,15 +2102,15 @@
           "source": { "nodeId": "input", "connectorId": "0" },
           "target": { "nodeId": "3", "connectorId": "0" },
           "points": [
-            { "x": 366, "y": 416 },
-            { "x": 125, "y": 416 }
+            { "x": 380.9999694824219, "y": 414.99999618530273 },
+            { "x": 125.99996948242188, "y": 417.99999618530273 }
           ]
         },
         {
           "source": { "nodeId": "input", "connectorId": "1" },
           "target": { "nodeId": "3", "connectorId": "1" },
           "points": [
-            { "x": 387, "y": 435 },
+            { "x": 403.9999694824219, "y": 438.99999618530273 },
             { "x": 206, "y": 436 }
           ]
         },
@@ -2202,15 +2134,15 @@
           "source": { "nodeId": "input", "connectorId": "0" },
           "target": { "nodeId": "4", "connectorId": "0" },
           "points": [
-            { "x": 549, "y": 416 },
-            { "x": 126, "y": 417 }
+            { "x": 593.9999694824219, "y": 413.99999618530273 },
+            { "x": 123.99996948242188, "y": 415.99999618530273 }
           ]
         },
         {
           "source": { "nodeId": "input", "connectorId": "1" },
           "target": { "nodeId": "4", "connectorId": "1" },
           "points": [
-            { "x": 572, "y": 434 },
+            { "x": 607.9999694824219, "y": 443.99999618530273 },
             { "x": 209, "y": 437 }
           ]
         },
@@ -2234,7 +2166,7 @@
           "source": { "nodeId": "input", "connectorId": "0" },
           "target": { "nodeId": "5", "connectorId": "0" },
           "points": [
-            { "x": 733, "y": 415 },
+            { "x": 747.9999694824219, "y": 414.99999618530273 },
             { "x": 126, "y": 418 }
           ]
         },
@@ -2242,29 +2174,29 @@
           "source": { "nodeId": "input", "connectorId": "1" },
           "target": { "nodeId": "5", "connectorId": "1" },
           "points": [
-            { "x": 756, "y": 433 },
+            { "x": 737.9999694824219, "y": 443.99999618530273 },
             { "x": 206, "y": 437 }
           ]
         },
         {
           "source": { "nodeId": "1", "connectorId": "12" },
           "target": { "nodeId": "5", "connectorId": "2" },
-          "points": [{ "x": 776, "y": 439 }]
+          "points": [{ "x": 790.9999694824219, "y": 427.99999618530273 }]
         },
         {
           "source": { "nodeId": "1", "connectorId": "13" },
           "target": { "nodeId": "5", "connectorId": "3" },
-          "points": [{ "x": 797, "y": 440 }]
+          "points": [{ "x": 816.9999694824219, "y": 431.99999618530273 }]
         },
         {
           "source": { "nodeId": "1", "connectorId": "14" },
           "target": { "nodeId": "5", "connectorId": "4" },
-          "points": [{ "x": 820, "y": 442 }]
+          "points": [{ "x": 844.9999694824219, "y": 438.99999618530273 }]
         },
         {
           "source": { "nodeId": "1", "connectorId": "15" },
           "target": { "nodeId": "5", "connectorId": "5" },
-          "points": [{ "x": 842, "y": 454 }]
+          "points": [{ "x": 863.9999694824219, "y": 450.99999618530273 }]
         },
         {
           "source": { "nodeId": "2", "connectorId": "1" },
@@ -3420,95 +3352,6 @@
   },
   "NandGame:Levels:STACK_PUSH_D": {
     "code": "A = SP\r\n*A = *A + 1\r\nA = *A - 1\r\n*A = D\r\n\r\n"
-  },
-  "NandGame:CustomComponent:188": {
-    "key": "188",
-    "name": "dff(edge).v1",
-    "inputs": [
-      { "pins": [{ "label": "d", "width": 1 }] },
-      { "pins": [{ "label": "cl", "width": 1 }] }
-    ],
-    "outputs": [
-      { "pins": [{ "label": "q", "width": 1 }] },
-      { "pins": [{ "label": "q'", "width": 1 }] }
-    ],
-    "diagram": {
-      "nodes": [
-        { "type": "109", "x": 118, "y": 124.40000915527344, "id": "0" },
-        { "type": "NAND", "x": 407, "y": 351, "id": "1" },
-        { "type": "109", "x": 18, "y": 259.3999938964844, "id": "2" },
-        { "type": "AND", "x": 151, "y": 359, "id": "3" },
-        { "type": "NAND", "x": 258, "y": 354, "id": "4" }
-      ],
-      "connections": [
-        {
-          "source": { "nodeId": "2", "connectorId": "1" },
-          "target": { "nodeId": "0", "connectorId": "0" }
-        },
-        {
-          "source": { "nodeId": "4", "connectorId": "0" },
-          "target": { "nodeId": "0", "connectorId": "1" }
-        },
-        {
-          "source": { "nodeId": "4", "connectorId": "0" },
-          "target": { "nodeId": "1", "connectorId": "0" }
-        },
-        {
-          "source": { "nodeId": "input", "connectorId": "0" },
-          "target": { "nodeId": "1", "connectorId": "1" },
-          "points": [
-            { "x": 461, "y": 497 },
-            { "x": 122, "y": 501 }
-          ]
-        },
-        {
-          "source": { "nodeId": "1", "connectorId": "0" },
-          "target": { "nodeId": "2", "connectorId": "0" },
-          "points": [
-            { "x": 46, "y": 470 },
-            { "x": 356, "y": 466 },
-            { "x": 402, "y": 334 }
-          ]
-        },
-        {
-          "source": { "nodeId": "input", "connectorId": "1" },
-          "target": { "nodeId": "2", "connectorId": "1" },
-          "points": [
-            { "x": 75, "y": 450 },
-            { "x": 204, "y": 450 }
-          ]
-        },
-        {
-          "source": { "nodeId": "2", "connectorId": "1" },
-          "target": { "nodeId": "3", "connectorId": "0" }
-        },
-        {
-          "source": { "nodeId": "input", "connectorId": "1" },
-          "target": { "nodeId": "3", "connectorId": "1" }
-        },
-        {
-          "source": { "nodeId": "3", "connectorId": "0" },
-          "target": { "nodeId": "4", "connectorId": "0" }
-        },
-        {
-          "source": { "nodeId": "1", "connectorId": "0" },
-          "target": { "nodeId": "4", "connectorId": "1" },
-          "points": [
-            { "x": 310, "y": 467 },
-            { "x": 356, "y": 466 },
-            { "x": 402, "y": 334 }
-          ]
-        },
-        {
-          "source": { "nodeId": "0", "connectorId": "0" },
-          "target": { "nodeId": "output", "connectorId": "0" }
-        },
-        {
-          "source": { "nodeId": "0", "connectorId": "1" },
-          "target": { "nodeId": "output", "connectorId": "1" }
-        }
-      ]
-    }
   },
   "NandGame:CustomComponent:92": {
     "key": "92",
@@ -8057,60 +7900,67 @@
   },
   "NandGame:Levels:COUNTER": {
     "nodes": [
-      { "type": "INC16", "x": 502, "y": 374, "id": "0" },
-      { "type": "SELECT16", "x": 445, "y": 244, "id": "1" },
-      { "type": "INV", "x": 339, "y": 248, "id": "2" },
-      { "type": "207", "x": 312, "y": 106.22222900390625, "id": "3" }
+      { "type": "INC16", "x": 389, "y": 353, "id": "0" },
+      { "type": "SELECT16", "x": 173, "y": 245, "id": "1" },
+      { "type": "207", "x": 293, "y": 108.22222900390625, "id": "2" },
+      {
+        "type": "INV",
+        "x": 300.5714416503906,
+        "y": 506.0000305175781,
+        "id": "3"
+      },
+      {
+        "type": "INV",
+        "x": 246.57144165039062,
+        "y": 403.0000305175781,
+        "id": "4"
+      }
     ],
     "connections": [
       {
-        "source": { "nodeId": "3", "connectorId": "0" },
+        "source": { "nodeId": "2", "connectorId": "0" },
         "target": { "nodeId": "0", "connectorId": "0" },
         "points": [
-          { "x": 605, "y": 442 },
-          { "x": 603, "y": 91 }
+          { "x": 500.9999694824219, "y": 421.1428527832031 },
+          { "x": 504.9999694824219, "y": 91.14285278320312 }
         ]
       },
       {
         "source": { "nodeId": "input", "connectorId": "0" },
         "target": { "nodeId": "1", "connectorId": "0" },
-        "points": [
-          { "x": 463, "y": 340 },
-          { "x": 123, "y": 342 }
-        ]
+        "points": [{ "x": 118.99996948242188, "y": 338.1428527832031 }]
       },
       {
         "source": { "nodeId": "input", "connectorId": "1" },
-        "target": { "nodeId": "1", "connectorId": "1" },
-        "points": [
-          { "x": 486, "y": 362 },
-          { "x": 229, "y": 365 }
-        ]
+        "target": { "nodeId": "1", "connectorId": "1" }
       },
       {
         "source": { "nodeId": "0", "connectorId": "0" },
         "target": { "nodeId": "1", "connectorId": "2" }
       },
       {
-        "source": { "nodeId": "input", "connectorId": "2" },
-        "target": { "nodeId": "2", "connectorId": "0" },
-        "points": [{ "x": 330, "y": 316 }]
+        "source": { "nodeId": "4", "connectorId": "0" },
+        "target": { "nodeId": "2", "connectorId": "0" }
+      },
+      {
+        "source": { "nodeId": "3", "connectorId": "0" },
+        "target": { "nodeId": "2", "connectorId": "1" }
+      },
+      {
+        "source": { "nodeId": "1", "connectorId": "0" },
+        "target": { "nodeId": "2", "connectorId": "2" },
+        "points": [{ "x": 358.9999694824219, "y": 201.14285278320312 }]
       },
       {
         "source": { "nodeId": "input", "connectorId": "2" },
         "target": { "nodeId": "3", "connectorId": "0" }
       },
       {
-        "source": { "nodeId": "2", "connectorId": "0" },
-        "target": { "nodeId": "3", "connectorId": "1" },
-        "points": [{ "x": 352, "y": 232 }]
-      },
-      {
-        "source": { "nodeId": "1", "connectorId": "0" },
-        "target": { "nodeId": "3", "connectorId": "2" }
-      },
-      {
         "source": { "nodeId": "3", "connectorId": "0" },
+        "target": { "nodeId": "4", "connectorId": "0" }
+      },
+      {
+        "source": { "nodeId": "2", "connectorId": "0" },
         "target": { "nodeId": "output", "connectorId": "0" }
       }
     ]
@@ -16766,8 +16616,8 @@
     "130",
     "131",
     "28",
-    "188",
     "198",
+    "209",
     "74",
     "180",
     "99",
@@ -16810,6 +16660,7 @@
     "62",
     "61",
     "29",
+    "207",
     "92",
     "80",
     "56",
@@ -16833,10 +16684,7 @@
     "205",
     "112",
     "33",
-    "141",
-    "207",
-    "208",
-    "209"
+    "141"
   ],
   "NandGame:CustomComponent:113": {
     "key": "113",
