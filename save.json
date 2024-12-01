@@ -3351,7 +3351,8 @@
     }
   },
   "NandGame:Levels:STACK_PUSH_D": {
-    "code": "A = SP\r\n*A = *A + 1\r\nA = *A - 1\r\n*A = D\r\n\r\n"
+    "code": "A = SP\r\n*A = *A + 1\r\nA = *A - 1\r\n*A = D\r\n",
+    "testCode": "init.stack\nD = 1\npush.d\n# inspect top of stack. Should be 1.\n"
   },
   "NandGame:CustomComponent:92": {
     "key": "92",
@@ -12829,6 +12830,9 @@
         }
       ]
     }
+  },
+  "NandGame:Levels:READ_KEYBOARD": {
+    "code": "DEFINE keyboard 0x6000\nDEFINE pDest 0x0\nDEFINE dest 0x0fff\n\n# init [pDest] = dest\nA = dest\nD = A\nA = pDest\n*A = D\n\n# D = [keyboard]\n# if D == 0 retry\nLABEL retry\nA = keyboard\nD = *A\nA = retry\nD; JEQ\n\n# [++[pDest]] = D\nA = pDest\n*A, A = *A + 1\n*A = D\n\n# if [keyboard] != 0 skip\nLABEL skip\nA = keyboard\nD = *A\nA = skip\nD; JNE\n\n# goto retry\nA = retry\nJMP\n"
   },
   "NandGame:CustomComponent:175": {
     "key": "175",
@@ -24670,11 +24674,11 @@
   "NandGame:Levels:CONTROL_UNIT": {
     "nodes": [
       { "type": "ALU_INSTRUCTION", "x": 514, "y": 433, "id": "0" },
-      { "type": "SPLIT16", "x": 61, "y": 454, "id": "1" },
+      { "type": "SPLIT16", "x": 25, "y": 451, "id": "1" },
       { "type": "44", "x": 623, "y": 164.20001220703125, "id": "2" },
       { "type": "44", "x": 535, "y": 162, "id": "3" },
       { "type": "44", "x": 447, "y": 163, "id": "4" },
-      { "type": "56", "x": 114, "y": 113, "id": "5" },
+      { "type": "56", "x": 105, "y": 112, "id": "5" },
       { "type": "INV", "x": 85, "y": 333, "id": "6" },
       { "type": "INV", "x": 254, "y": 296.20001220703125, "id": "7" },
       { "type": "NAND", "x": 239, "y": 114, "id": "8" }
@@ -24705,7 +24709,7 @@
         "source": { "nodeId": "1", "connectorId": "0" },
         "target": { "nodeId": "2", "connectorId": "0" },
         "points": [
-          { "x": 650, "y": 269 },
+          { "x": 647.9999694824219, "y": 284.1428527832031 },
           { "x": 46, "y": 280 }
         ]
       },
@@ -24717,7 +24721,7 @@
         "source": { "nodeId": "1", "connectorId": "0" },
         "target": { "nodeId": "3", "connectorId": "0" },
         "points": [
-          { "x": 562, "y": 271 },
+          { "x": 558.9999694824219, "y": 284.1428527832031 },
           { "x": 47, "y": 278 }
         ]
       },
@@ -24729,7 +24733,7 @@
         "source": { "nodeId": "1", "connectorId": "0" },
         "target": { "nodeId": "4", "connectorId": "0" },
         "points": [
-          { "x": 473, "y": 272 },
+          { "x": 470.9999694824219, "y": 284.1428527832031 },
           { "x": 47, "y": 279 }
         ]
       },
@@ -24756,7 +24760,7 @@
       {
         "source": { "nodeId": "0", "connectorId": "0" },
         "target": { "nodeId": "5", "connectorId": "3" },
-        "points": [{ "x": 196, "y": 416 }]
+        "points": [{ "x": 191.99996948242188, "y": 404.1428527832031 }]
       },
       {
         "source": { "nodeId": "1", "connectorId": "0" },
@@ -28559,7 +28563,7 @@
     ]
   },
   "NandGame:Levels:ASSEMBLER_DISPLAY": {
-    "code": "\n# for i in range(0x4000, 0x4000 + 512/16*16)\nA = 0x4000\nD = A\nA = 0\n*A = D\n\nLABEL loop\n# i\nA = 0\nD = *A\n# if i >= 0x4000 + 8192 goto end\nA = 0x4200\nD = D - A\nA = end\nD; JGE\n\n# d = 0xffff\nD = -1\n\n# *a = pattern\nA = 0\nA = *A\n*A = D\n\n# i += 32\nA = 0\nD = *A\nA = 32\nD = D + A\nA = 0\n*A = D\n\n# goto loop\nA = loop\nJMP\n\nLABEL end"
+    "code": "DEFINE screen 0x4000\nDEFINE endOfScreen 0x4200\n\n# for i in range(0x4000, 0x4000 + 512/16*16)\nA = screen\nD = A\nA = 0\n*A = D\n\nLABEL loop\n# i\nA = 0\nD = *A\n# if i >= 0x4000 + 8192 goto end\nA = endOfScreen\nD = D - A\nA = end\nD; JGE\n\n# d = 0xffff\nD = -1\n\n# *a = pattern\nA = 0\nA = *A\n*A = D\n\n# i += 32\nA = 0\nD = *A\nA = 32\nD = D + A\nA = 0\n*A = D\n\n# goto loop\nA = loop\nJMP\n\nLABEL end"
   },
   "NandGame:Levels:ESCAPE": {
     "code": "LABEL wait\nA = 0x7FFF\nD = *A\n# if turning or forwarding\nA = 0b11000000000\nD = D & A\nA = wait\nD; JNE\n# reset to op = non\nA = 0x7FFF\n*A = 0\nA = main\nJMP\n\nLABEL main\nA = 0x7FFF\nD = *A\n# if obstacle then turn left else forward\nA = 0b00100000000\nD = D & A\nA = left\nD; JNE\n\nLABEL foward\nA = 0b100\nD = A\nA = 0x7FFF\n*A = D\nA = wait\nJMP\n\nLABEL left\nA = 0b1000\nD = A\nA = 0x7FFF\n*A = D\nA = wait\nJMP\n\n\n"
